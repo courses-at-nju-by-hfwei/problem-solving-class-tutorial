@@ -1,5 +1,7 @@
-# 2019-1-6-programming-language
+# 2019-1-8-set
 
-## P(V)
-- Python
-- Haskell
+## Overview
+
+## Axioms
+
+## Operations
