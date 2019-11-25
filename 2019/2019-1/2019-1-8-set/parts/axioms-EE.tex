@@ -1,0 +1,46 @@
+% axioms-EE.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{axiom}[Axiom of Extensionality]
+    If two sets have exactly the same members, then they are equal.
+    \[
+      \forall A\; \forall B\; \big(\forall  \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \big) \implies A = B.
+    \]
+  \end{axiom}
+
+  \pause
+  \[
+    \forall A\; \forall B\; \big(\forall  \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \big) \iff A = B.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{axiom}[Empty Set Axiom]
+    There is a set having no members:
+
+    \[
+      \red{\exists B}\; \forall x (x \notin B).
+    \]
+  \end{axiom}
+
+  \pause
+  \begin{theorem}[Uniqueness of Empty Set]
+    There is only one empty set.
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    By the Axiom of Extensionality.
+  \end{proof}
+
+  \pause
+  \begin{definition}[``$\emptyset$'']
+    \[
+      \emptyset \triangleq \text{ the \teal{unique} unique empty set}.
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
