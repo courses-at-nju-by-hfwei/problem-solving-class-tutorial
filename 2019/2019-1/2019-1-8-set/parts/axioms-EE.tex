@@ -5,13 +5,17 @@
   \begin{axiom}[Axiom of Extensionality]
     If two sets have exactly the same members, then they are equal.
     \[
-      \forall A\; \forall B\; \big(\forall  \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \big) \implies A = B.
+      \forall A\; \forall B\; \big(\forall  \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \implies A = B \big).
+    \]
+    \[
+      \forall A\; \forall B\; \big(A \subseteq B \land B \subseteq A \implies A = B \big).
     \]
   \end{axiom}
 
   \pause
+  \vspace{0.30cm}
   \[
-    \forall A\; \forall B\; \big(\forall  \blue{x} (\blue{x} \in A \iff \blue{x} \in B) \big) \iff A = B.
+    \forall A\; \forall B\; \big(A \subseteq B \land B \subseteq A \red{\iff} A = B \big).
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -27,16 +31,13 @@
   \end{axiom}
 
   \pause
+  \vspace{0.50cm}
   \begin{theorem}[Uniqueness of Empty Set]
     There is only one empty set.
   \end{theorem}
 
   \pause
-  \begin{proof}
-    By the Axiom of Extensionality.
-  \end{proof}
-
-  \pause
+  \vspace{0.50cm}
   \begin{definition}[``$\emptyset$'']
     \[
       \emptyset \triangleq \text{ the \teal{unique} unique empty set}.
