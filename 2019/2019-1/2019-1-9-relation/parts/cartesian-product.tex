@@ -3,28 +3,33 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Cartesian Products]
-    The \red{Cartesian product} $A \times B$ \blue{of} $A$ and $B$ is defined as 
+    The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as 
     \[
-      {A \times B \triangleq \pause \set{(a, b) \mid a \in A \land b \in B}}
+      {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
     \]
   \end{definition}
 
+  \pause
+  \[
+    X^2 \triangleq X \times X
+  \]
+
+  \pause
   \begin{theorem}
     $A \times B$ \red{\it is} a set.
   \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-\end{frame}
-%%%%%%%%%%%%%%%
+  \pause
+  \begin{proof}
+    \[
+      A \times B \triangleq \set{(a, b) \;\red{\in\; ?} \mid a \in A \land b \in B}
+    \]
 
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{columns}
-    \column{0.45\textwidth}
-    \column{0.45\textwidth}
-  \end{columns}
+    \pause
+    \[
+      \red{\bset{\set{a}, \set{a, b}} \in\; \only<5>{?}\only<6->{\ps{\ps{A \cup B}}}}
+    \]
+  \end{proof}
+
 \end{frame}
 %%%%%%%%%%%%%%%

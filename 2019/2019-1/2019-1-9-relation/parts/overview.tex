@@ -7,16 +7,16 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.20\textwidth}{figs/lamport}
-
-  \begin{columns}
-    \column{0.45\textwidth}
-      \fig{width = 0.85\textwidth}{figs/lamport-ordering}
-    \column{0.45\textwidth}
-      \fig{width = 0.80\textwidth}{figs/lamport-std}
-  \end{columns}
-\end{frame}
+% \begin{frame}{}
+%   \fig{width = 0.20\textwidth}{figs/lamport}
+% 
+%   \begin{columns}
+%     \column{0.45\textwidth}
+%       \fig{width = 0.85\textwidth}{figs/lamport-ordering}
+%     \column{0.45\textwidth}
+%       \fig{width = 0.80\textwidth}{figs/lamport-std}
+%   \end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
@@ -37,9 +37,10 @@
 \begin{frame}{}
   \begin{columns}
     \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/dont-be-scared}
+      \fig{width = 0.70\textwidth}{figs/dont-be-scared}
     \column{0.50\textwidth}
-      \fig{width = 0.80\textwidth}{figs/dont-be-scared}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/excitement}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -47,22 +48,23 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Relations]
-    A \red{relation} $R$ \blue{from} $A$ \blue{to} $B$ is defined to be
+    A \red{\it relation} $R$ from $A$ to $B$ is a subset of $A \times B$:
     \[
-      {R \pause \subseteq A \times B}
+      {R \subseteq A \times B}
     \]
   \end{definition}
 
   \pause
-  \vspace{0.60cm}
+  \vspace{0.30cm}
   \begin{definition}[Cartesian Products]
-    The \red{Cartesian product} $A \times B$ \blue{of} $A$ and $B$ is defined as 
+    The \red{\it Cartesian product} $A \times B$ of $A$ and $B$ is defined as 
     \[
-      {A \times B \triangleq \pause \set{(a, b) \mid a \in A \land b \in B}}
+      {A \times B \triangleq \set{(a, b) \mid a \in A \land b \in B}}
     \]
   \end{definition}
 
   \pause
+  \vspace{0.30cm}
   \begin{axiom}[Ordered Pairs]
     \[
       (a, b) = (c, d) \iff a = c \land b = d

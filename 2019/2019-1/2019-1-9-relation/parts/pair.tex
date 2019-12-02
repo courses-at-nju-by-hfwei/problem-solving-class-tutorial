@@ -28,6 +28,7 @@
   \end{definition}
 
   \pause
+  \vspace{0.30cm}
   \begin{theorem}
     \[
       (a, b) = (c, d) \iff a = c \land b = d
@@ -35,12 +36,31 @@
   \end{theorem}
 
   \pause
-    \begin{gather*}
-      \onslide<3->{\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}} \\}
-      \onslide<4->{\set{a} \in \bset{\set{c}, \set{c, d}} \land \set{a, b} \in \bset{\set{c}, \set{c, d}} \\}
-      \onslide<5->{(\set{a} = \set{c} \lor \set{a} = \set{c, d}) \land (\set{a, b} = \set{c} \lor \set{a, b} = \set{c, d}) \\}
-      \onslide<6->{(\set{a} = \set{c} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c} \land \set{a, b} = \set{c, d}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c, d})}
-    \end{gather*}
+  \vspace{0.30cm}
+  \begin{proof}
+    \[
+      \bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}}
+    \]
+
+    \pause
+    \begin{columns}
+      \column{0.50\textwidth}
+        \[
+	  \blue{\textsc{Case I}: a = b}
+	\]
+      \column{0.50\textwidth}
+        \[
+	  \blue{\textsc{Case II}: a \neq b}
+	\]
+    \end{columns}
+  \end{proof}
+
+  % \begin{gather*}
+  %   \onslide<3->{\bset{\set{a}, \set{a, b}} = \bset{\set{c}, \set{c, d}} \\}
+  %   \onslide<4->{\set{a} \in \bset{\set{c}, \set{c, d}} \land \set{a, b} \in \bset{\set{c}, \set{c, d}} \\}
+  %   \onslide<5->{(\set{a} = \set{c} \lor \set{a} = \set{c, d}) \land (\set{a, b} = \set{c} \lor \set{a, b} = \set{c, d}) \\}
+  %   \onslide<6->{(\set{a} = \set{c} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c} \land \set{a, b} = \set{c, d}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c}) \lor (\set{a} = \set{c, d} \land \set{a, b} = \set{c, d})}
+  % \end{gather*}
 \end{frame}
 %%%%%%%%%%%%%%%
 

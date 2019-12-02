@@ -1,0 +1,241 @@
+% equivalence-relation.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\Large Equivalence Relations}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Equivalence Relation]
+    $R$ is an {\it equivalence relation} on $X$ iff $R$ is 
+    \begin{itemize}
+      \item reflexive 
+      \item symmetric
+      \item transitive
+    \end{itemize}
+  \end{definition}
+
+  \pause
+  \[
+    =\; \in \mathbb{R} \times \mathbb{R}
+  \]
+
+  \pause
+  \[
+    \parallel\; \in \mathbb{L} \times \mathbb{L}
+  \]
+
+  \pause
+  \[
+    a \sim b \iff a \;\%\; 12 = b \;\%\; 12
+  \]
+
+  \pause
+  \begin{center}
+    \red{\large Why are equivalence relations important?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \blue{\large Equivalence Relations as \red{Abstractions}}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.50\textwidth}{figs/modulo-clock}
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.80\textwidth}{figs/conference-hall-group}
+      \begin{center}
+	``全国人民代表大会各省代表团''
+      \end{center}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \red{\text{Equivalance Relation} \iff \text{Partition}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centerline{\LARGE Partition}
+
+  \vspace{0.60cm}
+  \fig{width = 0.60\textwidth}{figs/partition}
+
+  \begin{center}
+    ``不空、不漏、不重''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Partition]
+    A family of sets \red{$\set{A_{\alpha}: \alpha \in I}$} is a \blue{\it partition} of $X$ if
+
+    \begin{enumerate}[(i)]
+      \item 
+	\[
+	  \forall \alpha \in I: A_{\alpha} \neq \emptyset
+	\]
+	\[
+	  \uncover<2->{\teal{(\forall \alpha \in I \; \exists x \in X: x \in A_{\alpha})}}
+	\]
+      \item 
+	\[
+	  \bigcup_{\alpha \in I} A_{\alpha} = X
+	\]
+	\[
+	  \uncover<3->{\teal{(\forall x \in X \; \exists \alpha \in I: x \in A_{\alpha})}}
+	\]
+      \item 
+	\[
+	  \forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} = \emptyset \lor A_{\alpha} = A_{\beta}
+	\]
+	\[
+	  \uncover<4->{\teal{(\forall \alpha, \beta \in I: A_{\alpha} \cap A_{\beta} \neq \emptyset \implies A_{\alpha} = A_{\beta})}}
+	\]
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\text{Equivalance Relation } R \subseteq X \times X \implies \text{Partition } \Pi \text{ of } X}
+  \]
+
+  \pause
+  \begin{definition}[Equivalence Class]
+    The {\it equivalence class} of $x$ {\it modulo} $R$ is a \purple{set}:
+    \[
+      \red{[a]_{R}} = \set{b \in X: a R b}
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{definition}[Quotient Set]
+    The {\it quotient set} is a \purple{set}:
+    \[
+      X/R = \set{[a]_{R} \mid a \in X}
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    \[
+      X/R = \set{[a]_{R} \mid a \in X} \text{ is a partition of } X.
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \forall a \in X: [a]_{R} \neq \emptyset
+  \]
+
+  \pause
+  \[
+    \forall a \in X: \exists b \in X: a \in [b]_{R}
+  \]
+
+  \pause
+  \begin{theorem}
+    \[
+      \forall a \in X, b \in X: [a]_{R} \cap [b]_{R} = \emptyset \lor [a]_{R} = [b]_{R}
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \blue{\forall a \in X, b \in X: [a]_{R} \cap [b]_{R} \neq \emptyset \implies [a]_{R} = [b]_{R}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Equivalence Relation (UD Problem $10.10$)}
+%     \[
+%       \forall a, b \in X: [a]_{R} = [b]_{R} \iff a R b.
+%     \]
+%   \end{exampleblock}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\text{Partition } \Pi \text{ of } X \implies \text{Equivalance Relation } R \subseteq X \times X}
+  \]
+
+  \pause
+  \begin{definition}
+    \[
+      (a, b) \in R \iff \exists S \in \Pi: a \in S \land b \in S
+    \]
+    \[
+      R = \set{(a, b) \in X \times X \mid \exists S \in \Pi: a \in S \land b \in S}
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}
+    \[
+      R \text{ is an equivalence relation on } X.
+    \]
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/known-unknown}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}
+    \[
+      \sim\; \subseteq \mathbb{N} \times \mathbb{N}
+    \]
+
+    \[
+      (a, b) \sim (c, d) \iff a + d = b + c
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    $\sim$ is an equivalence relation.
+  \end{theorem}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ What is $\mathbb{N} \times \mathbb{N}/\sim$?}
+  \end{center}
+
+  \pause
+  \begin{definition}
+    \[
+      \mathbb{Z} \triangleq \mathbb{N} \times \mathbb{N}/\sim
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
