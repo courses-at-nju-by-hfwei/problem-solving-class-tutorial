@@ -1,0 +1,43 @@
+% func-as-set.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{axiom}[Axiom of Extensionality]
+    \[
+      \forall A: \forall B: \forall \blue{x}: (\blue{x} \in A \iff \blue{x} \in B) \iff A = B.
+    \]
+  \end{axiom}
+
+  \pause
+  \vspace{0.80cm}
+  \begin{theorem}[The Principle of Functional Extensionality]
+    \[
+      f, g \text{ are functions}:
+    \]
+    \[
+      f = g \iff \dom{f} = \dom{g} \land \Big(\forall x \in \dom{f}: f(x) = g(x)\Big)
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    \text{It may be that } \cod{f} \neq \cod{g}.
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Intersection, Union]
+    \[
+      f_1, f_2: A \to B
+    \]
+
+    \begin{enumerate}[(i)]
+      \centering
+      \item $\red{Q}:$ Is $f_1 \cup f_2$ a function from $A$ to $B$?
+      \item $\red{Q}:$ Is $f_1 \cap f_2$ a function from $A$ to $B$?
+    \end{enumerate}
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\LARGE Operations on Functions}
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{description}
+    \item[Set]
+      \[
+	\cup \qquad \cap \qquad \subseteq
+      \]
+    \item[Relation]
+      \[
+	\circ \qquad f^{-1}(a) \qquad f(A) \& f^{-1}(B)
+      \]
+  \end{description}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Intersection, Union]
+    \[
+      f_1, f_2: A \to B
+    \]
+
+    \begin{enumerate}[(i)]
+	\centering
+      \item $\red{Q}:$ Is $f_1 \cup f_2$ a function from $A$ to $B$?
+      \item $\red{Q}:$ Is $f_1 \cap f_2$ a function from $A$ to $B$?
+    \end{enumerate}
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{definition}[Restriction (UD Problem $15.20$)]
+    \[
+      f: A \to B, \; A_0 \subseteq A
+    \]
+
+    \[
+      \red{f\mid_{A_0}}: A_0 \to B,\qquad f\mid_{A_0}(a) = f(a), \forall a \in A_0
+    \]
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Composition]
+    \[
+      f: A \to B \qquad g: C \to D
+    \]
+
+    \[
+      \red{\ran{f} \subseteq C}
+    \]
+
+    The \blue{composition function}
+
+    \[
+      g \circ f : A \to D
+    \]
+
+    \[
+      (g \circ f) (x) = g(f(x))
+    \]
+  \end{definition}
+
+  \pause
+  \begin{alertblock}{Non-commutative:}
+    \[
+      f \circ g \neq g \circ f
+    \]
+  \end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Associative Property for Composition]
+    \[
+      f: A \to B \quad g: B \to C \quad h: C \to D
+    \]
+
+    \[
+      h \circ (g \circ f) = (h \circ g) \circ f
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \pause
+    \begin{enumerate}[(i)]
+      \item 
+	\[
+	  \dom{h \circ (g \circ f)} = \dom{(h \circ g) \circ f}
+	\]
+      \item 
+	\[
+	  (h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)
+	\]
+    \end{enumerate}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Properties of Composition (UD Theorem 15.7)]
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $f, g$ are injective, then $g \circ f$ is injective.
+      \item If $f, g$ are surjective, then $g \circ f$ is surjective.
+      \item If $f, g$ are bijective, then $g \circ f$ is bijective.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}[Proof for (i)]
+    \pause
+    \[
+      \forall a_1, a_2 \in A\; \Big( (g \circ f)(a_1) = (g \circ f)(a_2) \implies a_1 = a_2 \Big)
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Properties of Composition (UD Theorem 15.8)]
+    \[
+      f: A \to B \qquad g: B \to C
+    \]
+
+    \begin{enumerate}[(i)]
+      \item If $g \circ f$ is injective, then $f$ is injective.
+      \item If $g \circ f$ is surjective, then $g$ is surjective.
+      \item If $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective.
+    \end{enumerate}
+  \end{theorem}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \centerline{Left as an Exercise $(15.9)$.}
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Cancellation Property for Composition (UD Problem $15.11$)}
+    \[
+      f: A \to B \qquad g_1, g_2: B \to A
+    \]
+
+    \[
+      f \circ g_1 = f \circ g_2 \land \red{f \text{ is bijective }} \implies g_1 = g_2
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{alertblock}{Remark:}
+    \[
+      f \text{ is one-to-one}.
+    \]
+  \end{alertblock}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{proof}
+    \pause
+    \[
+      \forall b \in B \Big( f \circ g_1 (b) = f \circ g_2 (b) \implies \cdots \Big)
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
