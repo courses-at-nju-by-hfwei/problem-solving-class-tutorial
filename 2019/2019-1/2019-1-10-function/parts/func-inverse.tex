@@ -1,70 +1,115 @@
+% func-inverse.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \teal{\LARGE Inverse Functions}
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/inverse-function}
+\end{frame}
+%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{definition}[Inverse]
-    Let $f: A \to B$ be a \red{bijective} function.
+    Let $f: A \to B$ be a \red{bijective} function. \\[5pt]
 
-    The \blue{inverse} of $f$ is the function $f^{-1}: B \to A$ defined by
+    The \blue{\it inverse} of $f$ is the function $f^{-1}: B \to A$ defined by
     \[
       f^{-1}(b) = a \iff f(a) = b.
     \]
   \end{definition}
 
   \pause
-  \vspace{0.80cm}
-  \centerline{\red{$Q$:} Why ``Bijective''?}
-
-  % \begin{alertblock}{``Bijective'' Requirement of $f^{-1}$:}
-  %   \[
-  %     f: A \to B \quad f \subseteq A \times B
-  %   \]
-
-  %   \pause
-  %   \[
-  %     f^{-1} \subseteq B \times A \quad \text{(as a relation)}
-  %   \]
-  %   \pause
-  %   \[
-  %     \blue{f^{-1}: X \; (\subseteq B) \to A \quad \text{(as a function to $A$)}}
-  %   \]
-  %   \pause
-  %   \[
-  %     \red{f^{-1}: B \to A \quad \text{(as a function from $B$ to $A$)}}
-  %   \]
-  % \end{alertblock}
+  \fig{width = 0.30\textwidth}{figs/info}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[UD Theorem $15.4$ (ii)]
+  \begin{definition}[Invertible]
+    $f: X \to Y$ is {\it invertible} if there exists $g: Y \to X$ such that
+
     \[
-      f: A \to B \text{ is bijective } \implies f^{-1} \text{ is bijective}.
+      f(x) = y \iff g(y) = x.
     \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}
+    $f$ is invertible $\iff$ $f$ is bijective.
   \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+	\blue{$f$ is invertible $\implies$ $f$ is bijective} \pause \\[10pt]
+	$g$ is a function $\implies$ $f$ is injective \\[5pt]
+	$\dom{g} = Y \implies f \text{ is surjective}$
+      \end{center}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+	\blue{$f$ is bijective $\implies$ $f$ is invertible} \pause \\[10pt]
+	To show that $g$ defined above is indeed a function from $Y$ to $X$.
+      \end{center}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[Solving Equations (UD Theorem 15.4)]
+  \begin{definition}[Invertible]
+    $f: X \to Y$ is {\it invertible} if there exists $g: Y \to X$ such that
+
     \[
-      f: A \to B \text{ is bijective}
+      f(x) = y \iff g(y) = x.
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}
+    $g: Y \to X$ is unique.
+  \end{theorem}
+
+  \pause
+  \[
+    \blue{f^{-1} \triangleq g}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{f(x) = y \iff f^{-1}(y) = x}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[UD Theorem 16.4]
+    \[
+      \red{f: A \to B \text{ is bijective}}
     \]
 
     \begin{enumerate}[(i)]
-      \item $f \circ f^{-1} = i_B$
-      \item $g: B \to A \land f \circ g = i_B \implies g = f^{-1}$
+      \item $f \circ f^{-1} = I_B$
+      \item $f^{-1} \circ f = I_A$
       \vspace{0.30cm}
-      \item $f^{-1} \circ f = i_A$
-      \item $g: B \to A \land g \circ f = i_A \implies g = f^{-1}$
+      \item $f^{-1} \text{ is bijective}$
+      \vspace{0.30cm}
+      \item $g: B \to A \land f \circ g = I_B \implies g = f^{-1}$
+      \item $g: B \to A \land g \circ f = I_A \implies g = f^{-1}$
     \end{enumerate}
   \end{theorem}
 
   \pause
   \vspace{0.30cm}
-  \begin{alertblock}{Solving the equations:}
+  \begin{alertblock}{Solving the Equations:}
     \[
-      f \circ g = i_B \qquad g \circ f = i_A
+      f \circ g = I_B \qquad g \circ f = I_A
     \]
   \end{alertblock}
 \end{frame}
@@ -124,24 +169,3 @@
   \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
-
-% %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{definition}[Symmetric Group]
-%     Let $A$ be a set.
-% 
-%     Consider all bijective functions on $A$ and the composition ($\circ$) operator.
-% 
-%     \begin{enumerate}[(i)]
-%       \item $f \circ g$ is a bijective function on $A$
-%       \item $h \circ (\circ g \circ f) = (h \circ g) \circ f$
-%       \item $f \circ id_A = f = id_A \circ f$
-%       \item $f \circ f^{-1} = id_A = f^{-1} \circ f$
-%     \end{enumerate}
-%   \end{definition}
-% 
-%   \pause
-%   \vspace{0.50cm}
-%   \fignocaption{width = 0.25\textwidth}{figs/stay-tuned}
-% \end{frame}
-% %%%%%%%%%%%%%%%
