@@ -3,21 +3,6 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    {\LARGE Function}
-
-    \pause
-    \fig{width = 0.25\textwidth}{figs/aims}
-
-    \pause
-    \vspace{0.20cm}
-    \centerline{\Large \red{PROOF! PROOF! PROOF!}}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
     \teal{\LARGE Definition of Functions}
   \end{center}
 \end{frame}
@@ -46,22 +31,25 @@
   \end{definition}
 
   \pause
-  \vspace{0.60cm}
-  \begin{exampleblock}{Notations:}
-    \[
-      f: A \to B 
-    \]
+  \[
+    f: A \to B 
+  \]
 
-    \pause
-    \[
-      \dom{f} = A \qquad \ran{f} = f(A) \subseteq B \;\red{\triangleq}\; \cod{f}
-    \]
+  \pause
+  \[
+    \dom{f} = A \qquad \cod{f} = B
+  \]
+  \[
+    \ran{f} = f(A) \subseteq B
+  \]
 
-    \pause
-    \[
-      f: a \mapsto b \;\red{\triangleq}\; f(a)
-    \]
-  \end{exampleblock}
+  \pause
+  \[
+    f: a \mapsto b
+  \]
+  \[
+    f(a) \triangleq b
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -76,6 +64,7 @@
   \end{definition}
 
   \begin{alertblock}{For Proof:}
+    \pause
     \[
       \red{\forall a \in A:}
     \]
@@ -127,47 +116,103 @@
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{UD Problem 14.3 (g)}
+\begin{frame}
+  \begin{definition}
+    The \red{\it set} of all functions from $X$ to $Y$:
     \[
-      f: \mathbb{Q} \to \real{}
+      Y^{X} = \set{f \mid f: X \to Y}
     \]
-
-    \[
-      f(x) = \left\{\begin{array}{ll}
-	x + 1 & \text{if } x \in 2\integer{} \\
-	x - 1 & \text{if } x \in 3\integer{} \\
-	2     & \text{otherwise}
-      \end{array}\right.
-    \]
-  \end{exampleblock}
+  \end{definition}
 
   \pause
   \[
-    x = 6
+    Y^{X} = \set{f \;\red{\in\; \ps{X \times Y}} \mid f: X \to Y}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    $X$ and $Y$ are finite sets with $x$ and $y$ elements, respectively.
+  \end{center}
+  \[
+    |X| = x \quad |Y| = y, \qquad |Y^{X}| = \pause y^{x}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{UD Problem 14.5}
+\begin{frame}
+  \begin{definition}
+    The \red{\it set} of all functions from $X$ to $Y$:
     \[
-      f: \mathcal{P}(\real{}) \to \integer{}
+      Y^{X} = \set{f \mid f: X \to Y}
     \]
+  \end{definition}
 
-    \[
-      f(A) = \left\{\begin{array}{ll}
-	\min(A \cap \nat{}) & \text{if } A \cap \nat{} \neq \emptyset \\
-	-1 & \text{if } A \cap \nat{} = \emptyset
-      \end{array}\right.
-    \]
-  \end{exampleblock}
+  \[
+    \forall Y: Y^{\emptyset} = \pause \set{\emptyset}
+  \]
 
   \pause
-  \vspace{0.50cm}
+  \vspace{-0.30cm}
+  \[
+    \emptyset^{\emptyset} = \set{\emptyset}
+  \]
+
+  \pause
+  \[
+    \forall X \neq \emptyset: \emptyset^{X} = \pause \emptyset
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}
+    The \red{\it set} of all functions from $X$ to $Y$:
+    \[
+      Y^{X} = \set{f \mid f: X \to Y}
+    \]
+  \end{definition}
+
+  \[
+    2^{X} = \set{0, 1}^{X} \cong \ps{X}
+  \]
+
+  \fig{width = 0.60\textwidth}{figs/powerset-2-x-notation}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{definition}
+    The \red{\it set} of all functions from $X$ to $Y$:
+    \[
+      Y^{X} = \set{f \mid f: X \to Y}
+    \]
+  \end{definition}
+
+  \pause
   \begin{center}
-    By the \red{\it Well-Ordering Principle} of $\nat{}$
+    \red{$Q:$ Is there a set consisting of all functions?}
+  \end{center}
+
+  \pause
+  \begin{theorem}
+    There is no set consisting of all functions.
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    Suppose \red{by contradiction} that $A$ is the set of all functions. \\[8pt]
+
+    \pause
+    For every set $X$, there exists a function $I_{X}: \set{X} \to \set{X}$.
+
+    \pause
+    \[
+      \bigcup_{I_{X} \in A} \dom{I_{X}}
+    \]
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
