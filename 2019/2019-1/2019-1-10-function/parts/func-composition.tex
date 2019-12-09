@@ -28,11 +28,16 @@
   \end{definition}
 
   \pause
-  \vspace{0.50cm}
+  \vspace{0.20cm}
+  \begin{center}
+    \red{Why not ``$\exists b$'' as below?}
+  \end{center}
+
+  \vspace{-0.30cm}
   \begin{definition}[Composition]
     The {\it composition} of relations $R$ and $S$ is the relation
     \[
-      R \circ S = \set{(a, c) \mid \exists b: (a, b) \in S \land (b, c) \in R}
+      R \circ S = \set{(a, c) \mid \red{\exists b}: (a, b) \in S \land (b, c) \in R}
     \]
   \end{definition}
 \end{frame}
@@ -108,12 +113,15 @@
     \]
 
     \begin{enumerate}[(i)]
-      \item If $g \circ f$ is injective, then $f$ is injective.
       \item If $g \circ f$ is surjective, then $g$ is surjective.
+      \item If $g \circ f$ is injective, then $f$ is injective.
     \end{enumerate}
   \end{theorem}
 
   \pause
-  \fig{width = 0.50\textwidth}{figs/your-turn}
+  \vspace{0.30cm}
+  \begin{center}
+    \teal{You can also prove it by contradiction.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
