@@ -66,7 +66,16 @@
 \newcommand{\fig}[2]{
   \begin{figure}[htp]
     \centering
-      \includegraphics[#1]{#2}
+    \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+% for fig with caption: #1: width/size; #2: fig file; #3: caption
+\newcommand{\figcap}[3]{
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[#1]{#2}
+    \caption{#3}
   \end{figure}
 }
 
