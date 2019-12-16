@@ -11,11 +11,6 @@
   \end{definition}
 
   \pause
-  \[
-    \text{bijection} \;f: A \to f(A) \; (\blue{\subseteq B})
-  \]
-
-  \pause
   \vspace{0.80cm}
   \begin{center}
     {\red{\it $Q:$ What about onto function $f: A \to B$?}} \\[8pt] \pause
@@ -38,6 +33,10 @@
   \[
     |X| < |2^{X}|
   \]
+
+  \[
+    |\N| < |2^{\N}|
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -46,61 +45,65 @@
   \begin{definition}[Countable Revisited]
     $X$ is countable:
     \[
-      \exists n \in \N: |X| = n \red{\;\lor\;} |X| = |\N|
+      (\exists n \in \N: |X| = n) \red{\;\lor\;} |X| = |\N|
     \]
   \end{definition}
 
   \pause
-  \begin{theorem}[Proof for Countable (UD Exercise $22.5$)]
-    $X$ is countable iff there exists a \red{\it one-to-one} function
-    \[
-      f: X \to \N.
-    \]
-    \pause
+  \begin{theorem}[Proof for Countable]
     $X$ is countable iff
     \[
       \blue{|X| \le |\N|.}
     \]
+    \pause
+    $X$ is countable iff there exists a \red{\it one-to-one} function
+    \[
+      f: X \to \N.
+    \]
   \end{theorem}
 
   \pause
-  \begin{exampleblock}{Subsets of Countable Set (UD Problem $22.6$; UD Corollary $22.4$)}
+  \begin{exampleblock}{Subsets of Countable Set (UD Corollary $23.4$)}
     Every subset $B$ of a countable set $A$ is countable.
   \end{exampleblock}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Set Union (UD Problem $22.1$)}
-    Give an example, if possible, of
-    \begin{enumerate}[(a)]
-      \setcounter{enumi}{2}
-      \item a countably infinite collection of \blue{\it pairwise disjoint} nonempty sets whose union is finite.
-      \setcounter{enumi}{1}
-      \pause
-      \item a countably infinite collection of nonempty sets whose union is finite.
-    \end{enumerate}
-  \end{exampleblock}
 
   \pause
   \[
-    \Big(\set{A_i: i \in R} \quad A_{i} = \set{1}\Big) \;\red{= \set{\set{1}}}
-  \]
-
-  \pause
-  \[
-    |A| = n \implies |2^{A}| = 2^n
+    f: A \xrightarrow[onto]{1-1} \N \qquad \pause \teal{g = f|_{B}}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Set Union (UD Problem $22.1$)}
+%     Give an example, if possible, of
+%     \begin{enumerate}[(a)]
+%       \setcounter{enumi}{2}
+%       \item a countably infinite collection of \blue{\it pairwise disjoint} nonempty sets whose union is finite.
+%       \setcounter{enumi}{1}
+%       \pause
+%       \item a countably infinite collection of nonempty sets whose union is finite.
+%     \end{enumerate}
+%   \end{exampleblock}
+% 
+%   \pause
+%   \[
+%     \Big(\set{A_i: i \in R} \quad A_{i} = \set{1}\Big) \;\red{= \set{\set{1}}}
+%   \]
+% 
+%   \pause
+%   \[
+%     |A| = n \implies |2^{A}| = 2^n
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Slope (UD Problem $22.2 \;(e)$)}
+  \begin{exampleblock}{Slope (UD Problem $23.3 \;(a)$)}
     \begin{enumerate}[(a)]
-      \setcounter{enumi}{4}
-      \item the set of all lines with rational slopes
+      \item The set of all lines with rational slopes
     \end{enumerate}
   \end{exampleblock}
 
@@ -118,7 +121,9 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  \begin{center}
+    {\large \red{\it $Q:$ Is ``$\le$'' a partial order?}}
+  \end{center}
 
   \pause
   \vspace{0.30cm}
@@ -142,13 +147,19 @@
     \column{0.30\textwidth}
       \pause
       \fig{width = 0.50\textwidth}{figs/qrcode-cantor-bernstein-wiki}
+      \vspace{-0.60cm}
+      \begin{center}
+	{\teal{\footnotesize Schr\"{o}der–Bernstein theorem @ wiki}}
+      \end{center}
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \centerline{\large \red{\it $Q:$ Is ``$\le$'' a total order?}}
+  \begin{center}
+    {\large \red{\it $Q:$ Is ``$\le$'' a total order?}}
+  \end{center}
 
   \pause
   \vspace{0.50cm}
@@ -157,5 +168,30 @@
       Principle of Cardinal Comparability (PCC) $\iff$ Axiom of Choice
     \end{center}
   \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[UD Theorem $24.11$]
+    \[
+      |\R| = |\ps{\N}|
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    |\R| \le |\ps{\N}|  \qquad |\ps{\N}| \le |\R|
+  \]
+
+  \pause
+  \[
+    \mathfrak{c} \triangleq |\R| = |\ps{\N}| = |2^{\N}| \triangleq 2^{\aleph_{0}}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{\mathfrak{c} = 2^{\aleph_{0}}}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%

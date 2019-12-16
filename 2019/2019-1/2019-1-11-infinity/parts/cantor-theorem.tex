@@ -2,15 +2,27 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{center}
+    \teal{\Huge Beyond}
+  \end{center}
+
+  \[
+    \scalebox{8.5}{$\mathfrak{c}$}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{theorem}[Cantor's Theorem (1891)]
     \[
-      |A| \neq |2^{A}|
+      |A| \neq |\ps{A}|
     \]
   \end{theorem}
 
   \pause
   \begin{theorem}[Cantor Theorem (ES Theorem 24.4)]
-    If $f: A \to 2^{A}$, then $f$ is not onto.
+    If $f: A \to \ps{A}$, then $f$ is not onto.
   \end{theorem}
 
   \pause
@@ -22,7 +34,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Cantor Theorem]
-    If $f: A \to 2^{A}$, then $f$ is not onto.
+    If $f: A \to \ps{A}$, then $f$ is not onto.
   \end{theorem}
 
   \vspace{0.60cm}
@@ -45,7 +57,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Cantor Theorem]
-    If $f: A \to 2^{A}$, then $f$ is not onto.
+    If $f: A \to \ps{A}$, then $f$ is not onto.
   \end{theorem}
 
   \vspace{0.30cm}
@@ -55,7 +67,7 @@
   \]
   \pause
   \[
-    2^{A} = \ps{A} = \Big\{\emptyset, \set{1}, \set{2}, \set{3}, \set{1,2}, \set{1,3}, \set{2,3}, \set{1,2,3}\Big\}
+    \ps{A} = \Big\{\emptyset, \set{1}, \set{2}, \set{3}, \set{1,2}, \set{1,3}, \set{2,3}, \set{1,2,3}\Big\}
   \]
 
   \pause
@@ -76,11 +88,11 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Cantor Theorem]
-    If $f: A \to 2^{A}$, then $f$ is not onto.
+    If $f: A \to \ps{A}$, then $f$ is not onto.
   \end{theorem}
 
   \[
-    \red{\exists} B \in 2^{A}: \Big(\red{\forall} a \in A: f(a) \neq B\Big)
+    \red{\exists} B \in \ps{A}: \Big(\red{\forall} a \in A: f(a) \neq B\Big)
   \]
 
   \pause
@@ -119,7 +131,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{theorem}[Cantor Theorem]
-    If $f: A \to 2^{A}$, then $f$ is not onto.
+    If $f: A \to \ps{A}$, then $f$ is not onto.
   \end{theorem}
 
   \begin{proof}[Diagonal Argument \only<5->{\footnotesize \purple{(以下仅适用于可数集合 $A$)}}]
@@ -145,5 +157,26 @@
       \]
     }
   \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[Cantor Theorem]
+    \[
+      |A| \;\red{<}\; |\ps{A}|
+    \]
+  \end{theorem}
+
+  \pause
+  \[
+    A \qquad \ps{A} \qquad \ps{\ps{A}} \qquad \ldots
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{\large There is no largest infinity.}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%

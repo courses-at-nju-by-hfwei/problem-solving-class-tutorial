@@ -296,7 +296,11 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.40\textwidth}{figs/aleph0}
+  \begin{center}
+    \teal{\Huge Beyond}
+  \end{center}
+
+  \fig{width = 0.30\textwidth}{figs/aleph0}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -345,41 +349,47 @@
 \end{frame}
 %%%%%%%%%%%%%%%
 
-\input{parts/cantor-theorem}
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
+%     Is the set of all infinite sequences of $0$'s and $1$'s finite,
+%     countably infinite, or uncountable?
+%   \end{exampleblock}
+% 
+%   \pause
+%   \fig{width = 0.35\textwidth}{figs/diagonal-argument-01}
+%   \begin{center}
+%     \red{By Diagonal Argument.}
+%   \end{center}
+% \end{frame}
+% %%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
+%     Is the set of all infinite sequences of $0$'s and $1$'s finite,
+%     countably infinite, or uncountable?
+%   \end{exampleblock}
+% 
+%   \[
+%     f: \set{\set{0,1}^{\ast}} \to \N
+%   \]
+% 
+%   \pause
+%   \[
+%     \purple{f(x_0 x_1 \cdots) = \sum_{i=0}^{\infty} x_i 2^{i}}
+%   \]
+% 
+%   \pause
+%   \fig{width = 0.20\textwidth}{figs/wrong}
+% \end{frame}
+% %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
-    Is the set of all infinite sequences of $0$'s and $1$'s finite,
-    countably infinite, or uncountable?
-  \end{exampleblock}
-
-  \pause
-  \fig{width = 0.35\textwidth}{figs/diagonal-argument-01}
-  \begin{center}
-    \red{By Diagonal Argument.}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Infinite Sequences of $0$'s and $1$'s (UD Problem $23.4$)}
-    Is the set of all infinite sequences of $0$'s and $1$'s finite,
-    countably infinite, or uncountable?
-  \end{exampleblock}
-
   \[
-    f: \set{\set{0,1}^{\ast}} \to \N
+    \scalebox{5.5}{$\mathfrak{c} \triangleq |\R|$}
   \]
-
-  \pause
-  \[
-    \purple{f(x_0 x_1 \cdots) = \sum_{i=0}^{\infty} x_i 2^{i}}
-  \]
-
-  \pause
-  \fig{width = 0.20\textwidth}{figs/wrong}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -437,3 +447,5 @@
   \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
+
+\input{parts/cantor-theorem}
