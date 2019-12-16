@@ -54,19 +54,23 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Finite and Infinite]
-    For any set $X$,
-    \begin{description}[Infinite]
-      \item[Finite] 
-	\[
-	  \exists n \in \N: |X| = n  \qquad (\red{0 \in \N})
-	\]
-      \item[Infinite] ($\lnot$ finite)
-	\[
-	  \forall n \in \N: |X| \neq n
-	\]
-    \end{description}
+  \begin{definition}[Finite]
+    $X$ is finite if
+    \[
+      \exists n \in \N: |X| = \red{n}.
+    \]
   \end{definition}
+
+  \pause
+  \[
+    |X| = |\set{0, 1, \cdots, n-1}|
+  \]
+
+  \pause
+  \begin{theorem}[UD Theorem 22.6]
+    Let $A$ be a finite set. 
+    There is a \red{\it unique} $n \in \mathbb{N}$ such that $A \approx \set{0, 1, \cdots, n-1}$.
+  \end{theorem}
 
   % \pause
   % \vspace{0.30cm}
@@ -80,26 +84,77 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{definition}[Finite and Infinite]
+  \begin{definition}[Infinite]
+    $X$ is infinite if it is not finite:
+    \[
+      \forall n \in \N: |X| \neq n.
+    \]
+  \end{definition}
+
+  \pause
+  \begin{theorem}[UD Theorem 22.3]
+    $\N$ is infinite. \uncover<8->{\teal{(So are $\Z$, $\Q$, $\R$.)}}
+  \end{theorem}
+
+  \pause
+  \begin{center}
+    \red{\it By Contradiction.}
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \exists n \in \N: |\N| = n.
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      \exists f: \N \xleftrightarrow[onto]{1-1} \set{0, 1, \cdots, n-1}
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      g \triangleq \purple{f|_{\set{0, 1, \ldots, n}}}: \set{0, 1, \cdots, n} \to \set{0, 1, \cdots, n-1}
+    \]
+
+    \pause
+    \vspace{-0.30cm}
+    \[
+      g \text{ is not 1-1} \implies f \text{ is not 1-1}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Infinite]
     For any set $X$,
-    \begin{description}[Uncountable Infinite]
+    \begin{description}[Countably Infinite]
       \item[Countably Infinite]
 	\[
-	  |X| = |\N| \blue{\;\triangleq \aleph_{0}}
+	  |X| = |\N| \red{\;\triangleq \aleph_{0}}
 	\]
       \item[Countable]
 	\[
 	  \text{(finite $\lor$ countably infinite)}
 	\]
-      \item[Uncountably Infinite] 
-	\[
-	  \text{($\lnot$ finite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
-	\]
+      \item[Uncountable] 
 	\[
 	  \text{($\lnot$ countable)}
 	\]
+	\[
+	  \text{(infinite) $\land$ \Big($\lnot$ (countably infinite)\Big)}
+	\]
     \end{description}
   \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/aleph0}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -110,12 +165,19 @@
       |\Z| = |\N|
     \]
   \end{theorem}
+
+  \fig{width = 0.60\textwidth}{figs/integers}
+
+  \pause
+  \[
+    0 \quad 1 \quad -1 \quad 2 \quad -2 \quad \cdots
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[$\Q$ is Countable. (Cantor 1873-11)]
+  \begin{theorem}[$\Q$ is Countable. (Cantor 1873-11; Published in 1874)]
     \[
       |\Q| = |\N|
     \]
@@ -126,6 +188,9 @@
     \[
       q \in \red{\Q^{+}}: a / b \; (a,b \in \N^{+})
     \]
+
+    \pause
+    \vspace{-0.30cm}
     \begin{columns}
       \column{0.50\textwidth}
 	\fig{width = 0.50\textwidth}{figs/cantor-monumento}
@@ -144,21 +209,100 @@
     \]
   \end{theorem}
 
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/n-n-countable}
+    \column{0.50\textwidth}
+      \pause
+      \[
+	\pi: \N \times \N \to \N 
+      \]
+
+      \pause
+      \[
+	\pi(k_1, k_2) = \frac{1}{2} (k_1 + k_2)(k_1 + k_2 + 1) + k_2
+      \]
+  \end{columns}
+
+  \pause
+  \begin{center}
+    \red{Cantor Pairing Function}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\N^{n}$ is Countable.]
+    \[
+      |\N^{n}| = |\N|
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{theorem}
+    The Cartesian product of \red{finitely many} countable sets is countable.
+  \end{theorem}
+
   \pause
   \[
-    f: \N \times \N \to \N 
+    \purple{\N^{n} \quad \text{\it vs.} \quad \N^{\N}}
   \]
 
   \pause
   \[
-    f(m,n) = n + \frac{(m+n)(m+n+1)}{2}
+    \pi^{(n)}:\N^n \to \N
+  \]
+  
+  \pause
+  \[
+    \pi^{(n)}(k_1, \ldots, k_{n-1}, k_n) = \pi (\red{\pi^{(n-1)}}(k_1, \ldots, k_{n-1}) , k_n)
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12)]
+  \begin{theorem}
+    Any \red{finite} union of countable sets is countable.
+  \end{theorem}
+
+  \pause
+  \[
+    A = \set{a_n \mid n \in \N} \quad B = \set{b_n \mid n \in \N} \quad C = \set{c_n \mid n \in \N}
+  \]
+
+  \pause
+  \[
+    a_0 \quad b_0 \quad c_0 \quad a_1 \quad b_1 \quad c_1 \cdots
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}
+    The union of \red{countably many} countable sets is countable.
+  \end{theorem}
+
+  \pause
+  \fig{width = 0.40\textwidth}{figs/countable-union-countable}
+  \begin{center}
+    \teal{Counting by Diagonals.}  \\[15pt] \pause
+    \red{We need Axiom of (Countable) Choice!}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/aleph0}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12; Published in 1874)]
     \[
       |\R| \neq |\N|
     \]
@@ -170,15 +314,14 @@
   \pause
   \begin{center}
     Different ``Sizes'' of Infinity \\[10pt] \pause
-    Cantor's Diagonal Argument (1890)
+    Cantor's Diagonal Argument \teal{(1890)}
   \end{center}
-
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12)]
+  \begin{theorem}[$\R$ is Uncountable. (Cantor 1873-12; Published in 1874)]
     \[
       |\R| \neq |\N|
     \]
@@ -270,7 +413,7 @@
 \begin{frame}{}
   \begin{theorem}[$|\R|$ (Cantor 1877)]
     \[
-      |(0,1)| = \red{|\R| = |\R \times \R|} \blue{\;= |\R^{n \in \N}|}
+      |(0,1)| = \red{|\R| = |\R \times \R|} \blue{\;= |\R^{n}|}
     \]
   \end{theorem}
 
@@ -287,5 +430,10 @@
   \begin{center}
     {\purple{\it $Q:$ Then, what is ``dimension''?}}
   \end{center}
+
+  \pause
+  \begin{theorem}[Brouwer (Topological Invariance of Dimension)]
+    There is no \red{continuous} bijections between $\R^m$ and $\R^n$ for $m \neq n$.
+  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
