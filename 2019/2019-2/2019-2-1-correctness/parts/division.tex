@@ -1,0 +1,132 @@
+% division.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/division}
+    \column{0.50\textwidth}
+      \uncover<4->{
+        \[
+          \blue{P'} \implies \red{I}
+        \]
+      }
+      \uncover<5->{
+        \[
+          n = m \cdot 0 + n
+        \]
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/division-no-pause}
+    \column{0.50\textwidth}
+      \[
+        \{\red{I} \land B\}\; S\; \{\red{I}\}
+      \]
+        
+      \pause
+      \vspace{-0.30cm}
+      \begin{gather}
+        \red{n = mq + r} \land r \ge m \\[5pt]
+        r' \gets r - m \\
+        q' \gets q + 1
+      \end{gather}
+      \hrule
+      \begin{gather}
+        \red{n = mq' + r'}
+      \end{gather}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \setcounter{equation}{0}
+      \begin{gather}
+        \red{n = mq + r} \land r \ge m \\[5pt]
+        r' \gets r - m \\
+        q' \gets q + 1
+      \end{gather}
+      \hrule
+      \begin{gather}
+        \red{n = mq' + r'}
+      \end{gather}
+    \column{0.50\textwidth}
+      \begin{align*}
+        \red{n}\; & \red{= mq' + r'} \\
+          &= m (q + 1) + (r - m) \\
+          &= mq + r
+      \end{align*}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/division-no-pause}
+    \column{0.50\textwidth}
+      \[
+        \red{I} \land \lnot B \implies \teal{Q}
+      \]
+        
+      \pause
+      \vspace{-0.30cm}
+      \setcounter{equation}{0}
+      \begin{gather}
+        \red{n = mq + r} \\
+        r < m
+      \end{gather}
+      \hrule
+      \begin{gather}
+        \teal{n = mq + r}
+      \end{gather}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\{B \land \blue{t \in D} \land \blue{t = z}\}\; S\; \{\blue{t \in D} \land \blue{t < z} \}}
+    {(\textbf{while}\ B\ \textbf{do}\ S) \text{ will terminate}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/division-no-pause}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \blue{t = r}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

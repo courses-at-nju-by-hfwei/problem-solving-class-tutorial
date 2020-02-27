@@ -1,0 +1,23 @@
+% sum.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \blue{s = \sum_{i=1}^{n} i}
+  \]
+  
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \input{algs/sum}
+    \column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.30cm}
+  \[
+    \underbrace{\sum_{i=1}^{n} i}_{\blue{\text{TotalWork}}} = \underbrace{s}_{\blue{\text{WorkDone}}} +
+    \underbrace{\sum_{j = i}^{n} j}_{\blue{\text{WorkToDo}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

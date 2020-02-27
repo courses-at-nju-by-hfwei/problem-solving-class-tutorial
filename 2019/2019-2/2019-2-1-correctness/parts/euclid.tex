@@ -1,0 +1,88 @@
+% euclid.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \input{algs/euclid}
+    \column{0.20\textwidth}
+  \end{columns}
+  
+  \pause
+  \vspace{0.60cm}
+  \[
+    \blue{\Call{Euclid}{m, n} = \texttt{gcd}(m, n)}
+  \]
+  
+  \pause
+  \begin{center}
+    By mathematical induction on $n$, the second parameter.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \blue{\Call{Euclid}{m, n} = \texttt{gcd}(m, n)}
+  \]
+  
+  \vspace{-0.20cm}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \input{algs/euclid}
+    \column{0.20\textwidth}
+  \end{columns}
+  
+  \pause
+  \vspace{0.30cm}
+  \[
+    n = 0
+  \]
+  
+  \pause
+  \[
+    \Call{Euclid}{m, 0} = \texttt{gcd}(m, 0)
+  \]
+  
+  \pause
+  \[
+    \teal{m = \Call{Euclid}{m, 0}} = \red{\texttt{gcd}(m, 0) = m}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \blue{\Call{Euclid}{m, n} = \texttt{gcd}(m, n)}
+  \]
+  
+  \vspace{-0.20cm}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \input{algs/euclid}
+    \column{0.20\textwidth}
+  \end{columns}
+  
+  \pause
+  \vspace{0.30cm}
+  \[
+    \teal{\Call{Euclid}{m, k} = \texttt{gcd}(m, k), 
+    \; \forall\; 0 \le k \le n - 1 \; (n \ge 1)}
+  \]
+  
+  \pause
+  \vspace{-0.30cm}
+  \setcounter{equation}{0}
+  \begin{align}
+    \Call{Euclid}{m, n} 
+        \onslide<3->{&= \Call{Euclid}{n, m \bmod n} \\}
+        \onslide<4->{&= \texttt{gcd}(n, m \bmod n) \\}
+        \onslide<5->{&= \texttt{gcd}(m, n)}
+  \end{align}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,23 @@
+% reverse-no-comment.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{reverse}{$S$}
+      \State \teal{$P: \top$}
+      \State $X \gets S$
+      \State $Y \gets \Lambda$
+      
+      \hStatex
+      \State \blue{$P': X = S \land Y = \Lambda$}
+      \State \red{$I: S = \texttt{reverse}(Y) \cdot X$}
+      \While{$X \neq \Lambda$}
+        \State $Y \gets \Call{head}{X} \cdot Y$
+        \State $X \gets \Call{tail}{X}$
+      \EndWhile
+      \State \teal{$Q: Y = \texttt{reverse}(S)$}
+      
+      \hStatex
+      \State \Return Y
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

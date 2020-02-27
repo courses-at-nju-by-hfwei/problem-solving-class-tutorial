@@ -1,0 +1,256 @@
+% loop-invariant.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/show-me-proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/Robert-Floyd}
+      \begin{center}
+        \teal{Robert W. Floyd (1936 $\sim$ 2001)} \\[8pt]
+        Turing Award (1978)
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/meaning-to-program}
+      \begin{center}
+        \blue{``Assigning Meanings to Programs'' \\ (1967)}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.70\textwidth}{figs/Tony-Hoare}
+      \begin{center}
+        \teal{Tony Hoare (1934 $\sim$ )}  \\[8pt]
+        Turing Award (1980)
+      \end{center}
+    \column{0.50\textwidth}
+      \fig{width = 0.80\textwidth}{figs/axiom-basis}
+      \begin{center}
+        \blue{``An Axiomatic Basis for Computer Programming'' (1969)}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{Hoare triple}: \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  \pause
+  \[
+    \blue{P: \text{Pre-condition} \quad R: \text{Program} \quad Q: \text{Post-condition}}
+  \]
+  
+  \pause
+  \vspace{0.6cm}
+  \begin{center}
+    \uncover<4->{\red{Partial Correctness:}}
+  \end{center}
+  
+  \vspace{-0.2cm}
+  \begin{quote}
+    \begin{center}
+      If the precondition $P$ holds, \\[8pt]
+      the postcondition $Q$ should also hold \\ [8pt]
+      \red{after} executing the program $R$.
+    \end{center}
+  \end{quote}
+  
+  \uncover<5->{
+    \begin{center}
+      \red{\boxed{\text{Hoare logic provides the inference rules.}}}
+    \end{center}
+  }
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     \blue{S = \sum_{j = 1}^{n} a_j} \qquad \red{\set{\texttt{True}}\; R\; \set{S = \sum_{j = 1}^{n} a_j}}
+%   \]
+%   \fig{width = 0.60\textwidth}{figs/sum-flowchart}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \pause
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      $R$ consists of 
+      \begin{itemize}
+        \item ``$x \gets a$''
+        \item ``$S; T$''
+        \item ``\texttt{if $B$ then $S$ else $T$}''
+        \item \blue{``\texttt{while $B$ do $S$}''}
+      \end{itemize}
+    \column{0.25\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \vspace{0.30cm}
+  \[
+    \{ x = 42 \}\;   y \gets x + 1\;   \{ y = 43 \}
+  \]
+  
+  \pause
+  \[
+    \{ x + 1 \leq N \}\;  x \gets x + 1\;  \{ x \leq N \}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \vspace{0.60cm}
+  \[
+    \dfrac{\{P\}\; S\; \{Q\} \quad,\quad \{Q\}\; T\; \{R\}}
+    {\{P\}\; S;T\; \{R\}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \vspace{0.60cm}
+  \[
+    \dfrac{\{B \wedge P\}\; S\; \{Q\} \quad,\quad 
+    \{\neg B \wedge P \}\; T\; \{Q\}}
+    {\{P\}\; \textbf{if}\ B\ \textbf{then}\ S\ \textbf{else}\ T\; \{Q\}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \vspace{0.60cm}
+  \[
+    \dfrac{?}
+    {\{P\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{Q\}}
+  \]
+  
+  \pause
+  \vspace{0.60cm}
+  \[
+    \dfrac{P \implies \red{I} \quad,\quad \{\red{I} \wedge B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies Q}
+    {\{P\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{Q\}}
+  \]
+  
+  \pause
+  \vspace{0.60cm}
+  \[
+    \red{\boxed{I: \text{\it Loop Invariant}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{P \implies \red{I} \quad,\quad \{\red{I} \wedge B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies Q}
+    {\{P\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{Q\}}
+  \]
+  
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ How to find $I$?}  \\[10pt]  \pause
+    The general answer is ``I don't know.''
+  \end{center}
+  
+  \pause
+  \fig{width = 0.30\textwidth}{figs/keep-calm-practice-makes-perfect}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\set{P}\; R\; \set{Q}}}
+  \]
+  
+  \[
+    \dfrac{P \implies \red{I} \quad,\quad \{\red{I} \wedge B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies Q}
+    {\{P\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{Q\}}
+  \]
+  
+  \pause
+  \begin{center}
+    \blue{$Q:$ How to show its termination?}
+  \end{center}
+  
+  \pause
+  \[
+    \dfrac{\{B \land \blue{t \in D} \land \blue{t = z}\}\; S\; \{\blue{t \in D} \land \blue{t < z} \}}
+    {(\textbf{while}\ B\ \textbf{do}\ S) \text{ will terminate}}
+  \]
+  
+  \[
+    \blue{(D, <): \text{a well-ordered set}}
+  \]
+  
+  \pause
+  \[
+    \red{\boxed{t: \text{\it Loop Variant}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\{B \land \blue{t \in D} \land \blue{t = z}\}\; S\; \{\blue{t \in D} \land \blue{t < z} \}}
+    {(\textbf{while}\ B\ \textbf{do}\ S) \text{ will terminate}}
+  \]
+  
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{$Q:$ How to find $t$?}  \\[10pt]  \pause
+    The general answer is ``I don't know.''
+  \end{center}
+  
+  \pause
+  \fig{width = 0.30\textwidth}{figs/keep-calm-easy}
+\end{frame}
+%%%%%%%%%%%%%%%

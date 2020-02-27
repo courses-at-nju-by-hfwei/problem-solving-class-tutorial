@@ -1,0 +1,164 @@
+% reverse.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \input{algs/reverse}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/reverse-no-comment}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \blue{P'} \implies \red{I}
+      \]
+      \pause
+      \[
+        X = \texttt{reverse}(\Lambda) \cdot X
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/reverse-no-comment}
+    \column{0.50\textwidth}
+      \pause
+        \[
+          \{\red{I} \land B\}\; S\; \{\red{I}\}
+        \]
+        
+      \pause
+      \vspace{-0.30cm}
+      \begin{gather}
+        \red{S = \texttt{reverse}(Y) \cdot X} \land X \neq \Lambda \\[5pt]
+        Y' \gets \Call{head}{X} \cdot Y \\
+        X' \gets \Call{tail}{X}
+      \end{gather}
+      \hrule
+      \begin{gather}
+        \red{S = \texttt{reverse}(Y') \cdot X'}
+      \end{gather}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \setcounter{equation}{0}
+      \begin{gather}
+        \red{S = \texttt{reverse}(Y) \cdot X} \land X \neq \Lambda \\[5pt]
+        Y' \gets \Call{head}{X} \cdot Y \\
+        X' \gets \Call{tail}{X}
+      \end{gather}
+      \hrule
+      \begin{gather}
+        \red{S = \texttt{reverse}(Y') \cdot X'}
+      \end{gather}
+    \column{0.25\textwidth}
+  \end{columns}
+  
+  \vspace{0.30cm}
+  \begin{align*}
+    \red{S\;} &\red{= \texttt{reverse}(Y') \cdot X'} \\
+           \onslide<2->{&= \texttt{reverse}(\Call{head}{X} \cdot Y) \cdot \Call{tail}{X} \\}
+           \onslide<3->{&= \texttt{reverse}(Y) \cdot \texttt{reverse}(\Call{head}{X}) \cdot \Call{tail}{X} \\}
+           \onslide<4->{&= \texttt{reverse}(Y) \cdot (\Call{head}{X} \cdot \Call{tail}{X})} \\
+           \onslide<5->{&= \texttt{reverse}(Y) \cdot X}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\blue{P'} \implies \red{I} \quad,\quad \{\red{I} \land B\}\; S\; \{\red{I}\}
+    \quad,\quad \red{I} \land \lnot B \implies \teal{Q}}
+    {\{\blue{P'}\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{\teal{Q}\}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/reverse-no-comment}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \red{I} \land \lnot B \implies \teal{Q}
+      \]
+      
+      \pause
+      \vspace{-0.30cm}
+      \setcounter{equation}{0}
+      \begin{align}
+        \red{S = \texttt{reverse}(Y) \cdot X} \\[5pt]
+        X = \Lambda
+      \end{align}
+      \hrule
+      \begin{align}
+        \teal{Y = \texttt{reverse}(S)}
+      \end{align}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \dfrac{\{B \land \blue{t \in D} \land \blue{t = z}\}\; S\; \{\blue{t \in D} \land \blue{t < z} \}}
+    {(\textbf{while}\ B\ \textbf{do}\ S) \text{ will terminate}}
+  \]
+  
+  \begin{columns}
+    \column{0.50\textwidth}
+      \input{algs/reverse-no-comment}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \blue{t = \texttt{length}(X)}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{S = \texttt{reverse}(Y) \cdot X}
+  \]
+  
+  \pause
+  \[
+    \blue{\boxed{\text{TotalWork} = \text{WorkDone} \oplus \text{WorkToDo}}}
+  \]
+  
+  \pause
+  \[
+    \underbrace{\texttt{reverse}(S)}_{\blue{\text{TotalWork}}} = \underbrace{\texttt{reverse}(X)}_{\blue{\text{WorkToDo}}} \quad \cdot \quad
+    \underbrace{Y}_{\blue{\text{WorkDone}}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

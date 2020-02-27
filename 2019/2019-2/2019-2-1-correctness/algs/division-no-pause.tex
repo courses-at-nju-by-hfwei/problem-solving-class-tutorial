@@ -1,0 +1,23 @@
+% division-no-pause.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{division}{$n, m$}
+      \State \teal{$P: n > 0 \land m > 0$}
+      \State $r \gets n$
+      \State $q \gets 0$
+      
+      \hStatex
+      \State \blue{$P': r = n \land q = 0$}
+      \State \red{$I: n = mq + r$}
+      \While{$r \ge m$}
+        \State $r \gets r - m$
+        \State $q \gets q + 1$
+      \EndWhile
+      \State \teal{$Q: n = m q + r$}
+      
+      \hStatex
+      \State \Return $(q, r)$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

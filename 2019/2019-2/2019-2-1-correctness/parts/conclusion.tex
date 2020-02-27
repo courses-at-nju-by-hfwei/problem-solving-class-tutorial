@@ -1,0 +1,29 @@
+% conclusion.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.75\textwidth}{figs/how-to-think-about-algorithms-book}
+    \column{0.60\textwidth}
+      \pause
+      \[
+        \set{P}\; R\; \set{Q}
+      \]
+          
+      \pause
+      \[
+        \dfrac{P \implies \red{I} \;,\; \{\red{I} \land B\}\; S\; \{\red{I}\}
+        \;,\; \red{I} \land \lnot B \implies Q}
+        {\{P\}\; \textbf{while}\ B\ \textbf{do}\ S\; \{Q\}}
+      \]
+      
+      \pause
+      \[
+        \dfrac{\{B \land \blue{t \in D} \land \blue{t = z}\}\; S\; \{\blue{t \in D} \land \blue{t < z} \}}
+        {(\textbf{while}\ B\ \textbf{do}\ S) \text{ will terminate}}
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

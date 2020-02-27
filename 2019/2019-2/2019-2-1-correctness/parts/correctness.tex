@@ -1,0 +1,110 @@
+% correctness.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{quote}
+    \begin{center}
+    {\large
+      What We Talk About \\[8pt]
+      When We Talk About \blue{Correctness of Algorithms} $\cdots$
+    }
+    \end{center}
+  \end{quote}
+  % \fig{width = 0.30\textwidth}{figs/what-we-talk-about-love}
+  
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \red{What is the correctness of algorithms?}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{definition}[Correctness of Algorithms \textcolor{lightgray}{(Not A Formal Definition)}]
+    An algorithm is \teal{considered} correct if it meets its \red{specification}.
+  \end{definition}
+  
+  \vspace{0.80cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        Alg: $B \gets \texttt{Sort}(A)$ \\[8pt] \pause
+        \red{Spec: $B$ is sorted} \pause
+        \[
+          \forall 0 \le i < n-1: B[i] \le B[i + 1]
+        \]
+      \end{center}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        Alg: $d \gets \texttt{Euclid}(a, b)$ \pause
+        \[
+          \red{\text{Spec}: d = \textsf{gcd}(a, b)}
+        \]
+      \end{center}
+  \end{columns}
+  
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    We use \blue{specification languages} to specify specs. \\[8pt] \pause
+    Generally, they are \teal{mathematical logic + theory of domain knowledge}.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Correctness: Partial Correctness \& Total Correctness
+  \end{center}
+  
+  \pause
+  \begin{definition}[Total Correctness]
+    Total Correctness = Partial Correctness + Termination 
+  \end{definition}
+  
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Partial Correctness]
+    \red{\it If} the algorithm terminates, it meets its specification.
+  \end{definition}
+  
+  \pause
+  \vspace{0.50cm}
+  \begin{definition}[Total Correctness (Revisited)]
+    The algorithm indeed terminates \red{and} it meets its specification.
+  \end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \blue{Separating ``partial correctness'' from ``termination''}
+  \end{center}
+  
+  \begin{definition}[Total Correctness]
+    Total Correctness = Partial Correctness + Termination 
+  \end{definition}
+  
+  \vspace{0.50cm}
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \pause
+    \item They are intrinsically different for serious theoretical reasons.
+    \pause
+    \item Different \red{proof methods} for them \red{(Hoare Logic)}
+      \begin{itemize}
+        \setlength{\itemsep}{5pt}
+        \item \teal{(Loop) Invariants for ``partial correctness''}
+        \item \teal{Variants for ``termination''}
+      \end{itemize}
+    \pause
+    \item ``Termination'' is often much easier for sequential algorithms.
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%
