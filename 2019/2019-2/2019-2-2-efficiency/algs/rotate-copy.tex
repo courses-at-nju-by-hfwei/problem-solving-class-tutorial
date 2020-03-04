@@ -1,0 +1,11 @@
+% rotate-copy.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{rotate}{$A, n, l$}
+      \State copy $A[0 \ldots l-1]$ into $\textsf{v}$
+      \State move $A[l \ldots n-1]$ left $l$ places
+      \State copy $\textsf{v}$ to $A[l \ldots n-1]$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

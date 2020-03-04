@@ -1,0 +1,21 @@
+% mss-n2.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{mss}{$A, n$} 
+      \State \red{$\mss \gets 0$}
+
+      \hStatex
+      \For{$i = 0 \ldots n-1$}
+        \State \blue{$\summation \gets 0$}
+        \For{$j = i \ldots n-1$}
+          \State $\summation \gets \summation + A[j]$
+          \State \red{$\mss \gets \max \set{\mss, \summation}$}
+        \EndFor
+      \EndFor
+
+      \hStatex
+      \State \Return $\mss$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

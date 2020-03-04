@@ -1,0 +1,23 @@
+% mss-n3.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{mss}{$A, n$}  % \Comment{$n = \Call{length}{A}$}
+      \State \red{$\mss \gets 0$}
+
+      \hStatex
+      \For{$i \gets 0 \ldots n-1$}
+        \For{$j \gets i \ldots n-1$}
+          \State $\summation \gets 0$
+          \For{\blue{$k \gets i \ldots j$}}
+            \State $\summation \gets \summation + A[k]$
+          \EndFor
+          \State \red{$\mss \gets \max \set{\mss, \summation}$}
+        \EndFor
+      \EndFor
+
+      \hStatex 
+      \State \Return $\mss$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,151 @@
+% rotate.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.70\textwidth}
+      \input{algs/rotate-one-by-one}
+    \column{0.10\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{table}[]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c}
+    \hline
+    Algorithm & Time &  Space \\ \hline \hline \pause
+    \textsf{rotate-one-by-one} & $nl = \red{O(n^2)}$ & $O(1)$ \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.70\textwidth}
+      \input{algs/rotate-copy}
+    \column{0.10\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{table}[]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c}
+    \hline
+    Algorithm & Time &  Space \\ \hline \hline \pause
+    \textsf{rotate-copy} & \red{$O(n)$} & \blue{$l = O(n)$} \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \[
+        n = 5, \quad l = 3
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \[
+        n = 9, \quad l = 6
+      \]
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{Correctness Proof?}
+  \end{center}
+  
+  \pause
+  \begin{columns}
+    \column{0.50\textwidth}
+      permutation = cycles
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/stay-tuned}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{table}[]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c}
+    \hline
+    Algorithm & Time &  Space \\ \hline \hline \pause
+    \textsf{rotate-cyclic} & \red{$O(n)$} & \blue{$O(1)$} \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    A \cdot B \quad\text{\it vs.}\quad  B \cdot A
+  \]
+
+  \pause
+  \[
+    B \cdot A = (A^{R} \cdot B^{R})^{R}
+  \]
+
+  \pause
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \input{algs/rotate-reverse}
+    \column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{table}[]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c}
+    \hline
+    Algorithm & Time &  Space \\ \hline \hline
+    \textsf{rotate-reverse} & \red{$O(n)$} & \blue{$O(1)$} \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{table}[]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c||c|c}
+    \hline
+    Algorithm & Time &  Space \\ \hline \hline
+    \textsf{rotate-one-by-one} & $\red{O(n^2)}$ & \blue{$O(1)$} \\ \hline
+    \textsf{rotate-copy} & \red{$O(n)$} & \blue{$l = O(n)$} \\ \hline
+    \textsf{rotate-cyclic} & \red{$O(n)$} & \blue{$O(1)$} \\ \hline
+    \textsf{rotate-reverse} & \red{$O(n)$} & \blue{$O(1)$} \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}
+%   \begin{columns}
+%     \column{0.10\textwidth}
+%     \column{0.70\textwidth}
+%     \column{0.10\textwidth}
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%

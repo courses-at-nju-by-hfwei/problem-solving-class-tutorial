@@ -1,0 +1,26 @@
+% mss-prefix.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{mss}{$A, n$} 
+      \State $\prefix[0] \gets A[0]$
+      \For{$k \gets 1 \ldots n-1$}
+        \State $\prefix[k] \gets \prefix[k-1] + A[k]$
+      \EndFor
+    
+      \hStatex
+      \State \red{$\mss \gets 0$}
+
+      \hStatex
+      \For{$i \gets 0 \ldots n-1$}
+        \For{$j \gets i \ldots n-1$}
+          \State $\summation \gets \prefix[j] - \prefix[i-1]$
+          \State \red{$\mss \gets \max \set{\mss, \summation}$}
+        \EndFor
+      \EndFor
+
+      \hStatex 
+      \State \Return $\mss$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

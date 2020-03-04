@@ -1,0 +1,20 @@
+% sum.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{sum}{$n$}
+      \State $s \gets 0$
+      \State $i \gets 1$
+      
+      \hStatex
+      \State \red{$I: s = \sum\limits_{j=1}^{i-1} i$}
+      \While{$i <= n$}
+        \State $s \gets s + i$
+        \State $i \gets i + 1$
+      \EndWhile
+      
+      \hStatex
+      \State \Return $s$
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

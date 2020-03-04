@@ -1,0 +1,284 @@
+% asymptotics.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ How fast is your algorithm?}  \\[15pt] 
+
+    \pause
+    \vspace{-0.50cm}
+    \fig{width = 0.40\textwidth}{figs/listen-carefully}
+    \vspace{-1.50cm}
+
+    \pause
+    \[
+        W(n) = \frac{c_5 + c_6 + c_7}{2} n^2 
+            + (c_1 + c_2 + c_4 + c_8 - \frac{c_5 + c_6 + c_7}{2}) n
+            - (c_2 + c_4 + c_5 + c_8)
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.60\textwidth}
+      \fig{width = 0.95\textwidth}{figs/big-oh-knuth-paper}
+    \column{0.40\textwidth}
+      \fig{width = 0.85\textwidth}{figs/knuth-on-chair}
+  \end{columns}
+
+  \vspace{0.50cm}
+  \begin{alertblock}{Reference:}
+    {\it ``Big Omicron and Big Omega and Big Theta''}, Donald E. Knuth, 1976.
+  \end{alertblock}
+
+  \pause
+  \begin{center}
+    \red{\large Asymptotics}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ How fast is your algorithm?}  \\[15pt] 
+
+    \[
+        W(n) = \frac{c_5 + c_6 + c_7}{2} n^2 
+            + (c_1 + c_2 + c_4 + c_8 - \frac{c_5 + c_6 + c_7}{2}) n
+            - (c_2 + c_4 + c_5 + c_8)
+    \]
+
+    \pause
+    \[
+      \red{\boxed{W(n) = O(n^2)}}
+    \]
+
+    \pause
+    ``Order at most $n^2$''  \\[15pt]
+
+    \pause
+    ``$W(n)$ is a function whose \red{order of magnitude} is \teal{uppper-bounded} \\
+    by a \blue{constant times $n^2$}, \purple{for all large $n$}.''
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \[
+      \boxed{f(n) = O(g(n))}
+    \]
+
+    \pause
+    ``$f(n)$ is a function whose \red{order of magnitude} is \teal{uppper-bounded} \\
+    by a \blue{constant times $g(n)$}, \purple{for all large $n$}.''
+    \pause
+    \vspace{0.30cm}
+    \fig{width = 0.35\textwidth}{figs/big-oh}
+
+    \pause
+    \vspace{-0.50cm}
+    \[
+        O(g(n)) = \Big\{f(n) \mid \blue{\exists c > 0}, 
+        \purple{\exists n_0 > 0, \forall n \ge n_0}: 
+        0 \le f(n) \;\teal{\le}\; \blue{c g(n)} \Big\}
+    \]
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+   \boxed{f(n) = O(g(n))}
+  \]
+
+  \[
+      O(g(n)) = \Big\{f(n) \mid \blue{\exists c > 0}, 
+      \purple{\exists n_0 > 0, \forall n \ge n_0}: 
+      0 \le f(n) \;\teal{\le}\; \blue{c g(n)} \Big\}
+  \]
+
+  \pause
+  \[
+	\purple{\Big\{ \quad \Big\}}
+  \]
+
+  \pause
+  \begin{center}
+    It is a tradition to write $f(n) = O(g(n))$ instead of $f(n) \in O(g(n))$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+      O(g(n)) = \Big\{f(n) \mid \blue{\exists c > 0}, 
+      \purple{\exists n_0 > 0, \forall n \ge n_0}: 
+      0 \le f(n) \;\teal{\le}\; \blue{c g(n)} \Big\}
+  \]
+
+  \pause
+  \[
+    42n = O(0.50 n^2) \pause \qquad 42n^2 = O(0.50 n^2)
+  \]
+
+  \pause
+  \begin{center}
+    \red{$Q:$ What does $O(1)$ mean?} \\[15pt]
+    \blue{$A:$ It means constants.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \Omega(g(n)) = \Big\{f(n) \mid \blue{\exists c > 0}, 
+    \purple{\exists n_0 > 0, \forall n \ge n_0}: 
+    0 \le \blue{c g(n)} \;\teal{\le}\; f(n) \Big\}
+  \]
+
+  \pause
+  \[
+    0.50 n^2 = \Omega(42 n) \pause \qquad 0.50 n^2 = \Omega(42n^2)
+  \]
+
+  \pause
+  \begin{align*}
+    \Theta(g(n)) = \Big\{f(n) \mid\; &\blue{\exists c_1 > 0, \exists c_2 > 0}, \purple{\exists n_0 > 0, \forall n \ge n_0}: \\ 
+    & 0 \le \blue{c_1 g(n)} \;\teal{\le}\; f(n) \;\teal{\le}\; \blue{c_2 g(n)} \Big\}
+  \end{align*}
+
+  \pause
+  \[
+    0.50 n^2 = \Theta(42n^2)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+	o(g(n)) = \Big\{f(n) \mid \textcolor{red}{\forall c > 0}, \exists n_0 > 0, \forall n \ge n_0: 0 \le f(n) \;\red{<}\; c g(n)\Big\}
+  \]
+
+  \pause
+  \[
+    42n = o(0.50 n^2)
+  \]
+
+  \[
+	\omega(g(n)) = \Big\{f(n) \mid \textcolor{red}{\forall c > 0}, \exists n_0 > 0, \forall n \ge n_0: 0 \le c g(n) \;\red{<}\; f(n)\Big\}
+  \]
+
+  \pause
+  \[
+    0.50 n^2 = \omega(42n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    O \quad \Omega \quad \Theta
+  \]
+  \[
+    o \quad \omega \quad \teal{\theta}
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+	\teal{f(n) \;\red{\sim}\; g(n) \iff \lim_{n \to \infty} \frac{f(n)}{g(n)} = 1}
+  \]
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    42 n^2 + 2020 n \sim 42 n^2 + 2019 n
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \land f(n) = \Omega(g(n))
+  \]
+
+  \begin{align*}
+    f(n) = O(g(n)) &\iff g(n) = \Omega(f(n)) \\[6pt]
+    f(n) = o(g(n)) &\iff g(n) = \omega(f(n))
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    O\big(f(n)\big) + O\big(g(n)\big) = O\big(f(n) + g(n)\big)
+  \]
+
+  \pause
+  \[
+    O\big(f(n)\big) O\big(g(n)\big) = O\big(f(n) g(n)\big)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ How to compare functions in terms of $O/\Omega/\Theta$?}
+  \end{center}
+
+  \pause
+  \begin{align*}
+    O(1) &= O(\log \log n) = O(\log n) = O((\log n)^{c}) \\[6pt]
+    &= O(n^{\epsilon}) = O(n^c) \\[6pt]
+    &= O(n^{c} \log n) = O(n^{\log n}) = O(c^n) = O(n^n)
+  \end{align*}
+  \[
+    \blue{(0 < \epsilon < 1 < c)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.60\textwidth}{figs/growth-order}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{alertblock}{Stirling Formula (by {\it James Stirling}):}
+    \begin{columns}
+      \column{0.50\textwidth}
+        \[
+        n! \;\red{\sim}\; \sqrt{2 \pi n} \Big(\frac{n}{e}\Big)^{n}
+        \]
+      \column{0.50\textwidth}
+        \fig{width = 0.30\textwidth}{figs/stirling-formula-wiki-qrcode}
+    \end{columns}
+  \end{alertblock}
+
+  \pause
+  \[
+    \log(n!) = \Theta(n \log n)
+  \]
+
+  \pause
+  \[
+    H_n = \sum_{k=1}^{n} \frac{1}{k} = \Theta(\log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%

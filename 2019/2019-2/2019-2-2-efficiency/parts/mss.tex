@@ -1,0 +1,208 @@
+% mss.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Maximum-sum Subarray (\mss)}
+    \[
+      A[0 \ldots n-1] \qquad \forall 0 \le i \le n-1: \red{A[i] \in \Z}
+    \]
+
+    \pause
+    \begin{center}
+      To find (the sum of) a maximum-sum \red{subarray} of $A$
+    \end{center}
+  \end{exampleblock}
+
+  \pause
+  \[
+    A = [-2, 11, -4, 13, -5, -2]
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \mss = 11 + (-4) + 13 = 20
+  \]
+  
+  \pause
+  \[
+    A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+  \]
+
+  \pause
+  \vspace{-0.30cm}
+  \[
+    \mss = 4 + (-1) + 2 + 1 = 6
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \begin{center}
+        \input{algs/mss-n3}
+      \end{center}
+    \column{0.20\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} \sum_{k=i}^{j} 1 \pause = \frac{n^3 + 3n^2 + 2n}{6} \pause = \red{O(n^3)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \begin{center}
+        \input{algs/mss-prefix}
+      \end{center}
+    \column{0.20\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} 1 = \pause \cdots \pause = \red{O(n^2)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.20\textwidth}
+    \column{0.60\textwidth}
+      \begin{center}
+        \input{algs/mss-n2}
+      \end{center}
+    \column{0.20\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} 1 = \pause \cdots \pause = \red{O(n^2)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \[
+    \red{\boxed{\Call{mss}{0, n-1}}}
+  \]
+
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.80\textwidth}
+      \input{algs/mss-nlogn-1}
+    \column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.80\textwidth}
+      \input{algs/mss-nlogn-2}
+    \column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+
+  \pause
+  \vspace{0.60cm}
+  \[
+    T(n) = \begin{cases}
+      \blue{O(1)}, & n \le 1 \\
+      \red{2T(\frac{n}{2}) + O(n)}, & n > 1
+    \end{cases}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \[
+    T(n) = O(n \log n)
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \mssat[i]: \text{(the sum of) a maximum-sum subarray \red{ending with }} A[i]
+  \]
+
+  \pause
+  \[
+    \mss = \max_{0 \le i \le n-1} \mssat[i]
+  \]
+
+  \pause
+  \[
+    \red{Q: \text{ Where does } \mssat[i] \text{ start}?}
+  \]
+
+  \pause
+  \[
+    \blue{\boxed{\mssat[i] = \max \set{\mssat[i-1] + A[i], A[i]}}}
+  \]
+
+  \pause
+  \[
+    \mssat[0] = \red{A[0]}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.70\textwidth}
+      \input{algs/mss-n-1}
+    \column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.70\textwidth}
+      \input{algs/mss-n-2}
+    \column{0.10\textwidth}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{columns}
+    \column{0.40\textwidth}
+      \fig{width = 0.60\textwidth}{figs/programming-pearls}
+    \column{0.60\textwidth}
+      \begin{description}[<+->][Michael Shamos]
+        \item[Ulf Grenander] $O(n^3) \implies O(n^2)$
+        \item[Michael Shamos] $O(n \log n)$, onenight
+        \item[Jon Bentley] Conjecture: $\Omega(n \log n)$
+        \item[Michael Shamos] Carnegie Mellon seminar
+        \item[Jay Kadane] $O(n)$, \uncover<6->{\red{$\le 1$ minute}}
+      \end{description}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%

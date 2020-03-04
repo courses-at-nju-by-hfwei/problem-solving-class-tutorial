@@ -1,0 +1,24 @@
+% mss-nlogn-1.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \Procedure{mss}{$A, l, r$}
+      \If{$l > r$}
+        \State \Return 0
+      \EndIf
+      
+      \hStatex
+      \If{$l = r$}
+        \State \Return $\max \set{0, A[l]}$
+      \EndIf
+
+      \hStatex
+      \State $m \gets (l + r)/2$
+
+      \hStatex
+      \State $\leftmss \gets \Call{\mss}{l, m}$
+      \State $\rightmss \gets \Call{\mss}{m+1, r}$
+
+      \algstore{bkbreak}
+  \end{algorithmic}
+\end{algorithm}

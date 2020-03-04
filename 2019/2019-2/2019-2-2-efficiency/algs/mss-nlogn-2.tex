@@ -1,0 +1,29 @@
+% mss-nlogn-2.tex
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+  \algrestore{bkbreak}
+      \hStatex
+      \State $\summation \gets 0$
+      \State $\msstoleft \gets 0$
+      \For{$i \gets m \cdots l$}  \Comment{$A[l \ldots m]$}
+        \State $\summation \gets \summation + A[i]$
+        \State \blue{$\msstoleft \gets \max \set{\msstoleft, \summation}$}
+      \EndFor
+
+      \hStatex
+      \State $\summation \gets 0$
+      \State $\msstoright \gets 0$
+      \For{$i \gets m+1 \cdots r$}  \Comment{$A[m+1 \ldots r]$}
+        \State $\summation \gets \summation + A[i]$
+        \State \blue{$\msstoright \gets \max \set{\msstoright, \summation}$}
+      \EndFor
+
+      \hStatex
+      \State \red{$\middlemss \gets \msstoleft + \msstoright$}
+
+      \State
+      \State \purple{\Return $\max \set{\leftmss, \rightmss, \middlemss}$}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}

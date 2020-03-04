@@ -1,0 +1,189 @@
+% complexity.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{$Q:$ How fast is your algorithm?}  \\[15pt] 
+    \pause
+    \blue{$A:$ It runs 3.1415926 seconds.}
+  \end{center}
+
+  \vspace{0.50cm}
+  \fig{width = 0.60\textwidth}{figs/tle-oj}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \red{Disadvantages:} \\[10pt]  \pause
+      \begin{itemize}[<+->]
+        \setlength{\itemsep}{6pt}
+        \item On different machines
+        \item At different time
+        \item On different inputs
+      \end{itemize}
+    \column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{No Standards.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    We need a uniform \red{model of computation}. \\[8pt] \pause
+  \end{center}
+
+  \begin{center}
+    \href{https://www8.cs.umu.se/kurser/TDBA77/VT06/algorithms/BOOK/BOOK/NODE12.HTM}{\blue{The RAM (Random Access Machine) Model of Computation}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \href{https://www8.cs.umu.se/kurser/TDBA77/VT06/algorithms/BOOK/BOOK/NODE12.HTM}{\blue{The RAM (Random Access Machine) Model of Computation}}
+  \end{center}
+
+  \begin{columns}
+    \column{0.10\textwidth}
+    \column{0.80\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item Each memory access takes constant time.
+        \item Each \red{\it ``primitive''} operation takes constant time.
+        \item Compound operations should be decomposed.
+      \end{itemize}
+    \column{0.10\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{Counting up the number of time units.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \column{0.50\textwidth}
+      \red{Disadvantages:}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item On different machines
+        \item At different time
+        \item \red{On different inputs}
+      \end{itemize}
+    \column{0.25\textwidth}
+  \end{columns}
+
+  \pause
+  \vspace{0.60cm}
+  \begin{center}
+    \red{Counting up the number of time units} \\[5pt]
+    \blue{as a function of the input size} \\[5pt]
+    \purple{in typical cases.}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.80\textwidth}{figs/insertion-sort-time}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{align*}
+    T(n) = c_1 n &+ c_2 (n-1) + c_4 (n-1) \\
+    &+ c_5 \sum_{j=2}^{n} t_j + c_6 \sum_{j=2}^{n} (t_j - 1) + c_7 \sum_{j=2}^{n} (t_j - 1) + c_8 (n-1)
+  \end{align*}
+
+  \begin{center}
+    \blue{$\ldots$ as a function of the input size $\ldots$}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+  
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \fig{width = 0.80\textwidth}{figs/insertion-sort-time}
+
+  \vspace{-0.30cm}
+  \begin{align*}
+    T(n) = c_1 n &+ c_2 (n-1) + c_4 (n-1) \\
+    &+ c_5 \sum_{j=2}^{n} \red{t_j} + c_6 \sum_{j=2}^{n} (\red{t_j} - 1) + c_7 \sum_{j=2}^{n} (\red{t_j} - 1) + c_8 (n-1)
+  \end{align*}
+
+  \pause
+  \begin{center}
+    \red{$T(n)$: Depends on {\it which} input of size $n$}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \purple{$\ldots$ in typical cases.}
+  \end{center}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{center}
+    {\large \teal{Problem $P$ \qquad Algorithm $A$}} \\[8pt] \pause
+    {\large \red{Inputs: $\mathcal{X}_{n}$ of size $n$}}
+  \end{center}
+
+  \pause
+  \[
+    W(n) = \max_{x \in \mathcal{X}_{n}} T(x)
+  \]
+
+  \pause
+  \[
+    B(n) = \min_{x \in \mathcal{X}_{n}} T(x)
+  \]
+
+  \pause
+  \[
+	A(n) = \boxed{\red{\sum_{x \in \mathcal{X}_{n}} T(x) \cdot P(x)}} \pause 
+	     = \blue{\mathbb{E} [T]} \pause 
+		 = \boxed{\red{\sum_{t \in T(\mathcal{X}_{n})} t \cdot P(T = t)}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.80\textwidth}{figs/insertion-sort-time}
+
+  \pause
+  \[
+    B(n) = (c_1 + c_2 + c_4 + c_5 + c_8) n - (c_2 + c_4 + c_5 + c_8)
+  \]
+
+  \pause
+  \[
+    W(n) = \frac{c_5 + c_6 + c_7}{2} n^2 
+        + (c_1 + c_2 + c_4 + c_8 - \frac{c_5 + c_6 + c_7}{2}) n
+        - (c_2 + c_4 + c_5 + c_8)
+  \]
+
+  \pause
+  \[
+    A(n) = \pause \textcolor{lightgray}{2.25 n^2 + 7.75 n - 3 \red{H_n} - 6 \qquad (H_n = \sum_{k=1}^{n} \frac{1}{k}\approx \ln n})
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
