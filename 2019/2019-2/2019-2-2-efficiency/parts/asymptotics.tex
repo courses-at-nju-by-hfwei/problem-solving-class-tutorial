@@ -61,7 +61,7 @@
     ``Order at most $n^2$''  \\[15pt]
 
     \pause
-    ``$W(n)$ is a function whose \red{order of magnitude} is \teal{uppper-bounded} \\
+    ``$W(n)$ is a function whose \red{order of magnitude} is \teal{upper-bounded} \\
     by a \blue{constant times $n^2$}, \purple{for all large $n$}.''
   \end{center}
 \end{frame}
@@ -75,7 +75,7 @@
     \]
 
     \pause
-    ``$f(n)$ is a function whose \red{order of magnitude} is \teal{uppper-bounded} \\
+    ``$f(n)$ is a function whose \red{order of magnitude} is \teal{upper-bounded} \\
     by a \blue{constant times $g(n)$}, \purple{for all large $n$}.''
     \pause
     \vspace{0.30cm}
@@ -110,9 +110,43 @@
   \]
 
   \pause
+  \vspace{0.50cm}
   \begin{center}
     It is a tradition to write $f(n) = O(g(n))$ instead of $f(n) \in O(g(n))$.
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    42n^2 + 2020n \;\blue{= O(n^2)} \pause \;\red{= O(n^3)}
+  \]
+
+  \pause
+  \[
+    42n^2 + 2020n \in \;\blue{O(n^2)} \;\red{\subseteq O(n^3)}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    O\big(f(n)\big) + O\big(g(n)\big) \triangleq \pause
+    \Big\{ h + l \mid h \in O\big(f(n)\big), l \in O\big(g(n)\big) \Big\}
+  \]
+
+  \pause
+  \[
+    O\big(f(n)\big) O\big(g(n)\big) \triangleq 
+    \Big\{ h l \mid h \in O\big(f(n)\big), l \in O\big(g(n)\big) \Big\}
+  \]
+
+  \pause
+  \[
+    \textcolor{lightgray}{O\big(f(n)\big) - O\big(g(n)\big) \triangleq}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -131,7 +165,7 @@
 
   \pause
   \begin{center}
-    \red{$Q:$ What does $O(1)$ mean?} \\[15pt]
+    \red{$Q:$ What does $O(1)$ mean?} \\[15pt] \pause
     \blue{$A:$ It means constants.}
   \end{center}
 \end{frame}
@@ -174,6 +208,7 @@
     42n = o(0.50 n^2)
   \]
 
+  \pause
   \[
 	\omega(g(n)) = \Big\{f(n) \mid \textcolor{red}{\forall c > 0}, \exists n_0 > 0, \forall n \ge n_0: 0 \le c g(n) \;\red{<}\; f(n)\Big\}
   \]

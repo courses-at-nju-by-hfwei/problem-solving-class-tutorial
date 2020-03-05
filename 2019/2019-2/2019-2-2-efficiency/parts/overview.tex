@@ -79,7 +79,7 @@
 
   \pause
   \begin{center}
-    Time \textcolor{teal}{(and Space)} Complexity of Algorithms
+    Time \textcolor{lightgray}{(and Space)} Complexity of Algorithms
   \end{center}
 
   \pause
@@ -95,6 +95,21 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
+    \red{Space Complexity of Algorithms} \\[15pt] \pause
+    We only care about the \red{extra} space caused by the algorithm.  \\[8pt] \pause
+    The space for \red{inputs} is not part of space complexity of algorithms.
+  \end{center}
+
+  \pause
+  \[
+    \Call{insertion-sort}{A, n}: O(1) \quad \teal{(\text{constant})}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
     \red{Is it the Fastest?}
   \end{center}
 
@@ -102,8 +117,30 @@
 
   \pause
   \begin{center}
-    Complexity \blue{(lower bounds)} of Problems  \\[8pt] \pause
+    Complexity of Problems  \\[8pt] \pause
     This is much harder and is not our focus today.
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/problem-solution}
+
+  \pause
+  \begin{center}
+    Whenever you design an algorithm, \\[6pt] \pause
+    you provide an \red{upper bound} for the \blue{complexity of the problem}.  \\[15pt] \pause
+    Whenever you encounter a ``hardcore'' of the problem, \\[6pt] \pause
+    you obtain a \red{lower bound} for \blue{all possible algorithms}.  \\[20pt] \pause
+
+    Often, there is an \purple{``algorithmic gap''} between them. \\[8pt] \pause
+    When the gap is gone, you get the \red{optimal} algorithm.
+  \end{center}
+
+  \pause
+  \[
+    \textsf{sorting}(A, n): \Theta(n \log n) = O(n \log n) \cap \Omega(n \log n)
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
