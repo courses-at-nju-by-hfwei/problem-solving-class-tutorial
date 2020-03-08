@@ -1,0 +1,87 @@
+% file: parts/set-partition.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-4$ Extended)}
+    What is the number of ways to pass out $k$ \red{distinct} apples to \red{$n$-胞胎}. 
+    Assume that a child may get more than one apple.
+  \end{exampleblock}
+
+  \pause
+  \fignocaption{width = 0.40\textwidth}{figs/apple-to-children-set-partition}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-equiv}
+    \column{0.50\textwidth}
+      \fignocaption{width = 0.85\textwidth}{figs/apple-to-children-set-partition-nonequiv}
+  \end{columns}
+
+  \pause
+  \vspace{0.50cm}
+  \centerline{\red{\large Set partition of $[1 \cdots k]$ into $\le n$ parts}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-12$)}
+    \[
+      S(n,k) \;\teal{(\stirling{n}{k})}: \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
+    \]
+  \end{exampleblock}
+
+  \pause
+  \vspace{0.30cm}
+  \centerline{\red{Stirling number of the second kind}}
+
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[Recurrence for $S(n,k)$]
+    \[
+      S(0,0) = 1, \quad S(n,0) = S(0,n) = 0 \; (n > 0)
+    \]
+    \[
+      S(n,k) = S(n-1, k-1) + k S(n-1, k), \quad n > 0, k > 0
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{proof}
+    \[
+      S(n,k) = \underbrace{S(n-1, k-1)}_{\text{\teal{$n$ is alone}}} + \underbrace{k S(n-1, k)}_{\text{\teal{$n$ is not alone}}}
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    \text{Bell number: } B_n = \sum_{k=0}^{k=n} \stirling{n}{k}
+  \]
+
+  \pause
+  \begin{theorem}[Berend \& Tassa (2010)]
+    \[
+      B_n < \left( \frac{0.792 n}{\ln( n+1)} \right)^n, n \in \mathbb{Z}^{+}
+    \]
+  \end{theorem}
+
+  \pause
+  \vspace{0.50cm}
+  \begin{theorem}[de Bruijn (1981)]
+    As $n \to \infty$,
+    \[
+      \frac{\ln B_n}{n} = \ln n - \ln \ln n - 1 + \frac{\ln \ln n}{\ln n} + \frac{1}{\ln n} 
+      + \frac{1}{2}\left(\frac{\ln \ln n}{\ln n}\right)^2 + O\left(\frac{\ln \ln n}{(\ln n)^2} \right)
+    \]
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fignocaption{width = 0.85\textwidth}{figs/12-way}
+\end{frame}
+%%%%%%%%%%%%%%%
