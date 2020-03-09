@@ -1,0 +1,175 @@
+% 12ways.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{Counting \# of functions} under \purple{(twelve) different restrictions} \\[15pt] \pause
+  \end{center}
+
+  \pause
+  \[
+    \blue{\boxed{f: N \to M  \qquad (|N| = n, \quad |M| = m)}}
+  \]
+
+  \pause
+  \[
+    12 = (2 \times 2) \times 3
+  \]
+
+  \pause
+  \input{tables/12ways-f-header}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-b2b-header}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into labeled bins}
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        \red{unlabeled balls into labeled bins}
+        \pause
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
+        \pause
+        \blue{Only \red{the \# of balls} in each bin matters.}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into labeled bins}
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        \red{labeled balls into unlabeled bins}
+        \pause
+        \pause
+        \blue{...}
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+    \begin{center}
+      \red{unlabeled balls into labeled bins}
+      \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
+      \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
+      \pause
+      \blue{Only \red{the \# of balls} in each bin matters.}
+    \end{center}
+    \column{0.50\textwidth}
+      \pause
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-f-header}
+  \input{tables/12ways-f-header-formal}
+
+  \pause
+  \[
+    S_n = \big\{ f: N \xleftrightarrow[\text{1-1}]{\text{onto}} N \big\}
+  \]
+
+  \pause
+  \[
+    f \circ S_n = \big\{ f \circ g \mid g \in S_n \big\}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into labeled bins}
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{unlabeled balls into labeled bins}
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
+        \pause
+        \[
+          f: 1 \mapsto A, \quad 2 \mapsto B
+        \]
+        \[
+          f': 2 \mapsto A, \quad 1 \mapsto B
+        \]
+
+        \pause
+        \vspace{-0.50cm}
+        \[
+          f' = f \circ \red{(h: 1 \mapsto 2, \quad 2 \mapsto 1)}
+        \]
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\large \teal{Passing out Apples to Children}}
+  \end{center}
+
+  \fig{width = 0.40\textwidth}{figs/apple-children}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-b2b-numbered}
+\end{frame}
+%%%%%%%%%%%%%%%
