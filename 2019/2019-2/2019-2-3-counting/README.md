@@ -2,10 +2,10 @@
 
 ## Overview
 
+## The Twelvefold Way
+
 ## Sums
 
 ## Binomials
-
-## Twelve-
 
 ## Conclusion

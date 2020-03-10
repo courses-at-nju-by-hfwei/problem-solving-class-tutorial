@@ -18,12 +18,23 @@
 
   \pause
   \input{tables/12ways-f-header}
+
+  \pause
+  \vspace{-0.30cm}
+  \begin{center}
+    \red{\boxed{\text{distinguishable {\it vs.} indistinguishable}}}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \input{tables/12ways-b2b-header}
+
+  \pause
+  \begin{center}
+    \red{labeled {\it vs.} unlabeled}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -50,34 +61,7 @@
         \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
         \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
         \pause
-        \blue{Only \red{the \# of balls} in each bin matters.}
-      \end{center}
-  \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    2 balls, 3 bins \qquad \teal{(unrestricted)}
-  \end{center}
-
-  \begin{columns}
-    \pause
-    \column{0.50\textwidth}
-      \begin{center}
-        \red{labeled balls into labeled bins}
-      \end{center}
-      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
-      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
-      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
-    \column{0.50\textwidth}
-      \pause
-      \begin{center}
-        \red{labeled balls into unlabeled bins}
-        \pause
-        \pause
-        \blue{...}
+        \blue{Only \red{\# of balls} in each bin matters.}
       \end{center}
   \end{columns}
 \end{frame}
@@ -91,33 +75,40 @@
 
   \begin{columns}
     \column{0.50\textwidth}
-    \begin{center}
-      \red{unlabeled balls into labeled bins}
-      \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
-      \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
+      \begin{center}
+        \red{unlabeled balls into labeled bins}
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-1}
+        \fig{width = 0.90\textwidth}{figs/2ball-3bin-unlabeled-ball-2}
+        \blue{Only \red{\# of balls} in each bin matters.}
+      \end{center}
+    \column{0.55\textwidth}
       \pause
-      \blue{Only \red{the \# of balls} in each bin matters.}
-    \end{center}
-    \column{0.50\textwidth}
+      \begin{align*}
+        2 &= 2 + 0 + 0 \\[3pt] 
+        \onslide<3->{&= 1 + 1 + 0 \\[3pt]}
+        \onslide<4->{&= 1 + 0 + 1 \\[3pt]
+                     &= 0 + 2 + 0 \\[3pt]
+                     &= 0 + 1 + 1 \\[3pt]
+                     &= 0 + 0 + 2}
+      \end{align*}
+
       \pause
+      \vspace{-0.80cm}
+      \[
+        n = n_1 + n_2 + \ldots + n_m \quad (n_i \ge 0)
+      \]
+
+      \pause
+      \begin{center}
+        \red{weak composition of \blue{$n$} with $m$ terms}
+      \end{center}
+
+      % \pause
+      % \vspace{-0.30cm}
+      % \[
+      %   \blue{\boxed{\left( {n \choose m} \right)}}
+      % \]
   \end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \input{tables/12ways-f-header}
-  \input{tables/12ways-f-header-formal}
-
-  \pause
-  \[
-    S_n = \big\{ f: N \xleftrightarrow[\text{1-1}]{\text{onto}} N \big\}
-  \]
-
-  \pause
-  \[
-    f \circ S_n = \big\{ f \circ g \mid g \in S_n \big\}
-  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -160,16 +151,228 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    {\large \teal{Passing out Apples to Children}}
-  \end{center}
+  \input{tables/12ways-f-header-formal-sn}
 
-  \fig{width = 0.40\textwidth}{figs/apple-children}
+  \pause
+  \[
+    S_N = \big\{ f: N \xleftrightarrow[\text{1-1}]{\text{onto}} N \big\}
+  \]
+
+  \pause
+  \[
+    [f] = f \circ S_N = \big\{ f \circ g \mid g \in S_N \big\}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{f, g \text{ are indistinguishable} \iff g \in [f]}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \input{tables/12ways-b2b-numbered}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into labeled bins}
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+    \column{0.50\textwidth}
+      \pause
+      \begin{center}
+        \red{labeled balls into unlabeled bins}
+        \pause
+        \pause
+        \begin{align*}
+          \set{1, 2} &= \set{1, 2} \\[5pt] \pause
+                     &= \set{1} \cup \set{2}
+        \end{align*}
+
+        \pause
+        \red{\boxed{\text{partition of \blue{$N$} into \blue{$\le m$} parts}}}
+
+        \pause
+        \[
+          \left\{ n \atop \red{k} \right\}: \text{ \# of partitions of $N$ into \red{$k$} parts}
+        \]
+
+        \pause
+        \vspace{-0.30cm}
+        \[
+          \blue{\boxed{\sum_{k=1}^{m} \left\{ n \atop k \right\}}}
+        \]
+      \end{center}
+  \end{columns}
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{align*}
+    \set{1, 2, 3} &= \set{1, 2, 3} \\[5pt] \pause
+                  &= \set{1} \cup \set{2, 3}  \\[5pt] \pause
+                  &= \set{2} \cup \set{1, 3}  \\[5pt] \pause
+                  &= \set{3} \cup \set{1, 2}  \\[5pt] \pause
+                  &= \set{1} \cup \set{2} \cup \set{3}
+  \end{align*}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    2 balls, 3 bins \qquad \teal{(unrestricted)}
+  \end{center}
+
+  \begin{columns}
+    \pause
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into labeled bins}
+      \end{center}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+      \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+    \column{0.50\textwidth}
+      \begin{center}
+        \red{labeled balls into unlabeled bins}
+        \pause
+        \pause
+        \begin{align*}
+          f: & 1 \mapsto A, \quad 2 \mapsto A \\[5pt]
+          g: & 1 \mapsto B, \quad 2 \mapsto B \\[5pt]
+          h: & 1 \mapsto C, \quad 2 \mapsto C
+        \end{align*}
+
+        \pause
+        \[
+          g = (l: A \mapsto B, \quad B \mapsto A) \circ f
+        \]
+      \end{center}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-f-header-formal-sm}
+
+  \pause
+  \[
+    S_M = \big\{ f: M \xleftrightarrow[\text{1-1}]{\text{onto}} M \big\}
+  \]
+
+  \pause
+  \[
+    [f] = S_M \circ f = \big\{g \circ f \mid g \in S_M \big\}
+  \]
+
+  \pause
+  \[
+    \red{\boxed{f, g \text{ are indistinguishable} \iff g \in [f]}}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-f-header-formal-sn-sm}
+
+    % \begin{align*}
+    %   7 &= 7 \\[5pt]
+    %     &= 61 \\[5pt]
+    %     &= 52 = 511 \\[5pt]
+    %     &= 43 = 421 = 4111 \\[5pt]
+    %     &= 331 = 322 = 3211 = 31111 \\[5pt]
+    %     &= 2221 = 22111 = 211111 \\[5pt]
+    %     &= 1111111
+    % \end{align*}
+  \vspace{-0.60cm}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \uncover<3->{
+        \begin{align*}
+          5 &= 5 \\[3pt]
+            &= 4 1 \\[3pt]
+            &= 3 2 = 3 1 1 \\[3pt]
+            &= 2 2 1 = 2 1 1 1 1 \\[3pt]
+            &= 1 1 1 1 1
+        \end{align*}
+      }
+    \column{0.50\textwidth}
+      \uncover<4->{
+        \[
+          x_1 + x_2 + \cdots + x_{\red{k}} = n
+        \]
+        \[
+          x_1 \ge x_2 \ge \cdots \ge x_{\red{k}} \ge 1
+        \]
+      }
+
+      \uncover<5->{
+        \vspace{-1.20cm}
+        \[
+          \left| n \atop \red{k} \right|: \# \text{ of (integral) solutions}
+        \]
+      }
+
+      \uncover<6->{
+        \vspace{-1.20cm}
+        \[
+          \blue{\sum_{k=1}^{m} \left| n \atop k \right|}
+        \]
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{center}
+%     2 balls, 3 bins \qquad \teal{(unrestricted)}
+%   \end{center}
+% 
+%   \begin{columns}
+%     \column{0.50\textwidth}
+%       \begin{center}
+%         \red{labeled balls into labeled bins}
+%       \end{center}
+%       \fig{width = 0.80\textwidth}{figs/2ball-3bin-1A}
+%       \fig{width = 0.80\textwidth}{figs/2ball-3bin-1B}
+%       \fig{width = 0.80\textwidth}{figs/2ball-3bin-1C}
+%     \column{0.50\textwidth}
+%       \red{unlabeled balls into unlabeled bins}
+%       \pause
+%   \end{columns}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \input{tables/12ways-f-any}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \input{tables/12ways-b2b-numbered}
+% \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \begin{center}
+%     {\large \teal{Passing out Apples to Children}}
+%   \end{center}
+% 
+%   \fig{width = 0.40\textwidth}{figs/apple-children}
+% \end{frame}
 %%%%%%%%%%%%%%%

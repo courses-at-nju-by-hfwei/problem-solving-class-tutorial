@@ -1,0 +1,31 @@
+% 12ways-f-any.tex
+
+\begin{table}[H]
+  \centering
+  \resizebox{1.00\textwidth}{!}{%
+  \begin{tabular}{|c||c|c|c|}
+    \hline
+    \red{$f$ class}  & Any $f$ & Injective $f$ & Surjective $f$ \\ \hline \hline
+    $f$ & \incell{\blue{\incell{$n$-tuples}{of $m$ items}}}{\green{$m^n$}} 
+        & \uncover<2->{\incell{\blue{\incell{$n$-permutations}{of $m$ items}}}{\green{$m^{\underline{n}}$}}}
+        & \uncover<9->{\red{$???$}}
+        \\ \hline
+    $f \circ S_N$ & \blue{\incell{weak compositions of $n$}{into $m$ parts}}
+        & \uncover<3->{\incell{\blue{\incell{$n$-combinations}{of $m$ items}}}{\green{${m \choose n}$}}}
+        & \uncover<6->{\blue{\incell{compositions of $n$}{into $m$ parts}}}
+        \\ \hline
+    $S_M \circ f$ & \incell{\blue{\incell{partitions of $N$}{into $\le m$ parts}}}
+        {\green{$\sum\limits_{k=1}^{m} \left| n \atop k \right|$}} 
+        & \uncover<4->{\incell{\blue{\incell{$n$ pigeons}{into $m$ holes}}}{\green{$[n \le m]$}}}
+        & \uncover<7->{\incell{\blue{\incell{partitions of $N$}{into $m$ parts}}}
+        {\green{$\left| n \atop m \right|$}}} 
+        \\ \hline
+    $S_M \circ f \circ S_N$ & \incell{\blue{\incell{partitions of $n$}{into $\le m$ parts}}}
+        {\green{$\sum\limits_{k=1}^{m} \left\{ n \atop k \right\}$}} 
+        & \uncover<5->{\incell{\blue{\incell{$n$ pigeons}{into $m$ holes}}}{\green{$[n \le m]$}}}
+        & \uncover<8->{\incell{\blue{\incell{partitions of $n$}{into $m$ parts}}}
+        {\green{$\left\{ n \atop m \right\}$}}} 
+        \\ \hline
+  \end{tabular}}
+  \caption{The Twelvefold Way \purple{(Functions)}.}
+\end{table}

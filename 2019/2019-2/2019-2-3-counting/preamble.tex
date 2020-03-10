@@ -17,6 +17,8 @@
 
 \definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
 
+\newcommand{\incell}[2]{\begin{tabular}[c]{@{}c@{}}#1\\ #2\end{tabular}}
+
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \newcommand{\hStatex}[0]{\vspace{5pt}}
@@ -74,6 +76,7 @@
 \usepackage{tabu}
 
 \DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
+\newcommand{\cnum}[1]{\blue{#1}} % \textcircled{1}
 
 \newcommand{\thankyou}{
 \begin{frame}[noframenumbering]{}

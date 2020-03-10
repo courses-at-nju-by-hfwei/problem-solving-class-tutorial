@@ -1,0 +1,53 @@
+% notations
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Falling and Rising Factorials
+  \end{center}
+
+  \[
+    m^{\underline{n}} = \textcolor{lightgray}{(m)_{n}} 
+    = m (m-1) (m-2) \cdots (m-n+1) = \frac{m!}{(m-n)!}
+  \]
+
+  \pause
+  \[
+    m^{\bar{n}} = \textcolor{lightgray}{m^{(n)}} 
+    = m (m+1) (m+2) \cdots (m+n-1) 
+  \]
+
+  \pause
+  \[
+    n! = n^{\underline{n}} = 1^{\bar{n}}
+  \]
+
+  \pause
+  \[
+    {m \choose n} = \frac{m^{\underline{n}}}{n!}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Iverson Bracket
+  \end{center}
+
+  \[
+    [P] = \begin{cases}
+            1, & \text{if $P$ is true}; \\
+            0, & \text{otherwise}
+          \end{cases}
+  \]
+
+  \pause
+  \[
+    [n \le m] = \begin{cases}
+                  1, & \text{if } n \le m; \\
+                  0, & \text{if } n > m
+                \end{cases}
+  \]
+\end{frame}
+%%%%%%%%%%%%%%%
