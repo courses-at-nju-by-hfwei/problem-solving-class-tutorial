@@ -2,6 +2,10 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \[
+    \setpartition{n}{k}: \text{ \# of partitions of set $N$ into $k$ parts}
+  \]
+
   \begin{align*}
     \set{1, 2, 3} &= \set{1, 2, 3} \\[5pt] \pause
                   &= \set{1} \cup \set{2, 3}  \\[5pt] \pause
@@ -9,10 +13,6 @@
                   &= \set{3} \cup \set{1, 2}  \\[5pt] \pause
                   &= \set{1} \cup \set{2} \cup \set{3}
   \end{align*}
-
-  \[
-    \left\{ n \atop \red{k} \right\}: \text{ \# of partitions of $N$ into \red{$k$} parts}
-  \]
 
   \begin{center}
     \red{Stirling number of the second kind}
@@ -24,51 +24,46 @@
 \begin{frame}{}
   \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-12$)}
     \[
-      S(n,k) \;\teal{(\stirling{n}{k})}: \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
+      \setpartition{n}{k}: \text{ \# of partitions of set $N$ into $k$ parts}
     \]
   \end{exampleblock}
 
   \pause
-  \vspace{0.30cm}
-  \begin{theorem}[Recurrence for $S(n,k)$]
-    \[
-      S(0,0) = 1, \quad S(n,0) = S(0,n) = 0 \; (n > 0)
-    \]
-    \[
-      S(n,k) = S(n-1, k-1) + k S(n-1, k), \quad n > 0, k > 0
-    \]
-  \end{theorem}
-
-  \pause
-  \begin{proof}
-    \[
-      S(n,k) = \underbrace{S(n-1, k-1)}_{\text{\teal{$n$ is alone}}} + \underbrace{k S(n-1, k)}_{\text{\teal{$n$ is not alone}}}
-    \]
-  \end{proof}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
+  \vspace{0.60cm}
   \[
-    \text{Bell number: } B_n = \sum_{k=1}^{k=n} \stirling{n}{k}
+    \setpartition{n}{k} = \underbrace{\setpartition{n-1}{k-1}}_{\text{\teal{$n$ is alone}}} 
+      + \underbrace{k \setpartition{n-1}{k}}_{\text{\teal{$n$ is not alone}}} \qquad (n > 0, k > 0)
   \]
 
   \pause
-  \begin{theorem}[Berend \& Tassa (2010)]
-    \[
-      B_n < \left( \frac{0.792 n}{\ln( n+1)} \right)^n, n \in \mathbb{Z}^{+}
-    \]
-  \end{theorem}
-
-  \pause
   \vspace{0.50cm}
-  \begin{theorem}[de Bruijn (1981)]
-    As $n \to \infty$,
-    \[
-      \frac{\ln B_n}{n} = \ln n - \ln \ln n - 1 + \frac{\ln \ln n}{\ln n} + \frac{1}{\ln n} 
-      + \frac{1}{2}\left(\frac{\ln \ln n}{\ln n}\right)^2 + O\left(\frac{\ln \ln n}{(\ln n)^2} \right)
-    \]
-  \end{theorem}
+  \[
+    \text{Bell number: } B_n = \sum_{k=1}^{k=n} \setpartition{n}{k}
+  \]
 \end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% \begin{frame}{}
+%   \[
+%     \text{Bell number: } B_n = \sum_{k=1}^{k=n} \setpartition{n}{k}
+%   \]
+% 
+%   \pause
+%   \begin{theorem}[Berend \& Tassa (2010)]
+%     \[
+%       B_n < \left( \frac{0.792 n}{\ln( n+1)} \right)^n, n \in \mathbb{Z}^{+}
+%     \]
+%   \end{theorem}
+% 
+%   \pause
+%   \vspace{0.50cm}
+%   \begin{theorem}[de Bruijn (1981)]
+%     As $n \to \infty$,
+%     \[
+%       \frac{\ln B_n}{n} = \ln n - \ln \ln n - 1 + \frac{\ln \ln n}{\ln n} + \frac{1}{\ln n} 
+%       + \frac{1}{2}\left(\frac{\ln \ln n}{\ln n}\right)^2 + O\left(\frac{\ln \ln n}{(\ln n)^2} \right)
+%     \]
+%   \end{theorem}
+% \end{frame}
 %%%%%%%%%%%%%%%

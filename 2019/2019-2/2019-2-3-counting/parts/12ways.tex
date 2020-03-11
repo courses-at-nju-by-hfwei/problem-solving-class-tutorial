@@ -2,6 +2,53 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{columns}
+    \column{0.33\textwidth}
+      \uncover<2->{
+      \begin{center}
+        \blue{tuples} \\[5pt]
+        \blue{permutations} \\[5pt]
+        \blue{combinations}
+      \end{center}}
+    \column{0.34\textwidth}
+      \begin{center}
+        \red{Counting}
+      \end{center}
+      \fig{width = 0.60\textwidth}{figs/girl-counting}
+    \pause
+    \column{0.33\textwidth}
+      \uncover<3->{
+      \begin{center}
+        \teal{compositions} \\[5pt]
+        \teal{set partitions} \\[5pt]
+        \teal{integer partitions}
+      \end{center}}
+  \end{columns}
+
+  \uncover<4->{
+  \vspace{0.50cm}
+  \begin{center}
+    \red{Counting \# of functions} under \purple{(twelve) different restrictions} \\[15pt] \pause
+  \end{center}}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    Counting {\it vs.} Generating
+  \end{center}
+
+  \pause
+  \fig{width = 0.30\textwidth}{figs/taocp-4a}
+  \begin{center}
+    Generating is more about algorithms.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{center}
     \red{Counting \# of functions} under \purple{(twelve) different restrictions} \\[15pt] \pause
   \end{center}
@@ -33,7 +80,7 @@
 
   \pause
   \begin{center}
-    \red{labeled {\it vs.} unlabeled}
+    \red{\boxed{labeled {\it vs.} unlabeled}}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -103,11 +150,11 @@
         \red{weak composition of \blue{$n$} with $m$ terms}
       \end{center}
 
-      % \pause
-      % \vspace{-0.30cm}
-      % \[
-      %   \blue{\boxed{\left( {n \choose m} \right)}}
-      % \]
+      \pause
+      \vspace{-0.30cm}
+      \[
+        \blue{\boxed{\composition{n}{m}}}
+      \]
   \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -327,7 +374,7 @@
       \uncover<6->{
         \vspace{-1.20cm}
         \[
-          \blue{\sum_{k=1}^{m} \left| n \atop k \right|}
+          \blue{\boxed{\sum_{k=1}^{m} \left| n \atop k \right|}}
         \]
       }
   \end{columns}
@@ -358,15 +405,11 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \input{tables/12ways-f-any}
-\end{frame}
-%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \begin{center}
-%     {\large \teal{Passing out Apples to Children}}
-%   \end{center}
-% 
-%   \fig{width = 0.40\textwidth}{figs/apple-children}
-% \end{frame}
+  \pause
+  \vspace{-0.60cm}
+  \[
+    \red{\composition{n}{m} \quad\quad \setpartition{n}{k} \quad\quad \partition{n}{k}}
+  \]
+\end{frame}
 %%%%%%%%%%%%%%%

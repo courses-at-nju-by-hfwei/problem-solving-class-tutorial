@@ -1,82 +1,105 @@
-% file: parts/partition.tex
+% integer-partition.tex
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Integer Partition ($\text{CS}: 1.5-4$ Extended)}
-    What is the number of ways to pass out $k$ \red{identical} apples to \red{$n$-胞胎}. 
-    Assume that a child may get more than one apple.
-  \end{exampleblock}
+  \[
+    \left| n \atop k \right|: \# \text{ of partitions of $n$ into $k$ parts}
+  \]
 
-  \pause
   \begin{columns}
+    \pause
     \column{0.50\textwidth}
-      \fig{width = 0.95\textwidth}{figs/apple-to-children-partition}
+      \begin{align*}
+        5 &= 5 \\[3pt]
+          &= 4 1 \\[3pt]
+          &= 3 2 = 3 1 1 \\[3pt]
+          &= 2 2 1 = 2 1 1 1 1 \\[3pt]
+          &= 1 1 1 1 1
+      \end{align*}
+    \pause
     \column{0.50\textwidth}
-      \fig{width = 0.95\textwidth}{figs/apple-to-children-partition-equiv}
+      \[
+        x_1 + x_2 + \cdots + x_k = n
+      \]
+      \[
+        x_1 \ge x_2 \ge \cdots \ge x_k \ge 1
+      \]
   \end{columns}
-
-  \pause
-  \vspace{0.80cm}
-  \centerline{\red{\large Integer partition of $k$ into $\le n$ parts}	\pause \quad \teal{(The order does not matter!)}}
-
-  \pause
-  \begin{theorem}[\uncover<6->{G. H. Hardy, Ramanujan (1918)}]
-    \[
-      p(k) \triangleq \sum_{x=1}^{x=k} p_{x}(k) \;\teal{\sim}\; \frac {1} {4\sqrt{3} k} \exp\left({\pi \sqrt {\frac{2k}{3}}}\right)
-    \]
-  \end{theorem}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-% \begin{frame}{}
-%   \[
-%     p_{n}(k): \text{ \# of partitions of $k$ into $n$ parts}
-%   \]
-% 
-%   \begin{theorem}[Recurrence for $p_{n}(k)$]
-%     \[
-%       p_{n}(k) = p_{n-1}(k-1) + p_{n}(k-n)
-%     \]
-%   \end{theorem}
-% 
-%   \pause
-%   \begin{proof}
-%     \[
-%       1 \le x_1 \le x_2 \le \cdots \le x_n
-%     \]
-% 
-%     \begin{columns}
-%       \column{0.40\textwidth}
-% 	\[
-% 	  \red{\text{\textsc{Case} } x_1 = 1}
-% 	\]
-% 	\[
-% 	  1 = x_1 \le x_2 \le \cdots \le x_n
-% 	\]
-% 	\uncover<3->{
-% 	  \[
-% 	    \boxed{p_{n-1}(k-1)}
-% 	  \]
-% 	}
-%       \column{0.60\textwidth}
-%         \[
-% 	  \red{\text{\textsc{Case} } x_1 > 1}
-% 	\]
-% 	\[
-% 	  1 < x_1 \le x_2 \le \cdots \le x_n
-% 	\]
-% 	\uncover<4->{
-% 	  \[
-% 	    1 \le x_1-1 \le x_2-1 \le \cdots \le x_n-1
-% 	  \]
-% 	}
-% 	\uncover<5->{
-% 	  \[
-% 	    \boxed{p_{n}(k-n)}
-% 	  \]
-% 	}
-%     \end{columns}
-%   \end{proof}
-% \end{frame}
+\begin{frame}{}
+  \[
+    x_1 + x_2 + \cdots + x_k = n
+  \]
+  \[
+    x_1 \ge x_2 \ge \cdots \ge x_k \ge 1
+  \]
+
+  \begin{theorem}[Recurrence for $\partition{n}{k}$]
+    \[
+      \partition{n}{k} = \partition{n-1}{k-1} + \partition{n}{n-k}
+    \]
+  \end{theorem}
+
+  \pause
+  \begin{columns}
+    \column{0.40\textwidth}
+    \[
+      \red{\text{\textsc{Case I}}: x_k = 1}
+    \]
+
+    \uncover<3->{
+      \[
+        \blue{\boxed{\partition{n-1}{k-1}}}
+      \]
+    }
+    \column{0.60\textwidth}
+      \[
+        \red{\text{\textsc{Case II}}: x_k > 1}
+      \]
+      \uncover<4->{
+        \[
+          x_1 - 1 \ge x_2 - 1 \ge \cdots \ge x_k - 1 \ge 1
+        \]
+      }
+      \uncover<5->{
+        \[
+          \blue{\boxed{\partition{n}{n-k}}}
+        \]
+      }
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{theorem}[G. H. Hardy, Ramanujan (1918)]
+    \[
+      p(n) \triangleq \sum_{x=1}^{x=n} \partition{n}{k} \;\teal{\sim}\; 
+      \frac {1} {4\sqrt{3} n} \exp\left({\pi \sqrt {\frac{2n}{3}}}\right)
+    \]
+  \end{theorem}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \href{https://www.wolframalpha.com/input/?i=Round\%5B+E\%5E\%28Sqrt\%5B400\%2F3\%5D+Pi\%29\%2F\%28800Sqrt\%5B3\%5D\%29\%5D}{p(200) \;\teal{\sim}\; 4, 100, 251, 432, 188}
+      \]
+
+      \[
+        \href{https://www.wolframalpha.com/input/?i=PartitionsP\%5B200\%5D}{p(200) = 3, 972, 999, 029, 388}
+      \]
+
+      \pause
+      \[
+        \href{https://www.wolframalpha.com/input/?i=\%284100251432188-3972999029388\%29\%2F3972999029388}{3.203\%}
+      \]
+    \column{0.50\textwidth}
+      \pause
+      \fig{width = 0.50\textwidth}{figs/infinity-movie}
+  \end{columns}
+\end{frame}
 %%%%%%%%%%%%%%%
