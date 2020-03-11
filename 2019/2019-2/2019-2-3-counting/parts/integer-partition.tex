@@ -39,7 +39,7 @@
 
   \begin{theorem}[Recurrence for $\partition{n}{k}$]
     \[
-      \partition{n}{k} = \partition{n-1}{k-1} + \partition{n}{n-k}
+      \partition{n}{k} = \partition{n-1}{k-1} + \partition{n-k}{k}
     \]
   \end{theorem}
 
@@ -66,7 +66,7 @@
       }
       \uncover<5->{
         \[
-          \blue{\boxed{\partition{n}{n-k}}}
+          \blue{\boxed{\partition{n-k}{k}}}
         \]
       }
   \end{columns}
