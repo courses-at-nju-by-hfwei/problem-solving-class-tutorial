@@ -2,60 +2,141 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Multisets ($\text{CS}: 1.5-4$)}
-    Use multisets to determine the number of ways to pass out $k$ \red{\bf identical} apples to $n$ children. 
-    Assume that a child may get more than one apple.
-  \end{exampleblock}
+  \begin{center}
+    \red{Weak composition of $n$ with $m$ terms}
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{align*}
+        2 &= 2 + 0 + 0 \\[3pt] 
+          &= 1 + 1 + 0 \\[3pt]
+          &= 1 + 0 + 1 \\[3pt]
+          &= 0 + 2 + 0 \\[3pt]
+          &= 0 + 1 + 1 \\[3pt]
+          &= 0 + 0 + 2
+      \end{align*}
+    \column{0.50\textwidth}
+      \pause
+      \[
+        \red{\boxed{n = x_1 + x_2 + \ldots + x_m \quad (x_i \ge 0)}}
+      \]
+
+      \pause
+      \[
+        {n+m-1 \choose m-1} = {n+m-1 \choose n}
+      \]
+  \end{columns}
+ 
+  \pause
+  \vspace{0.30cm}
+  \fig{width = 0.35\textwidth}{figs/weak-composition-n7-m5-stars-and-bars}
+  \[
+    7 = 4 + 0 + 1 + 2 + 0 \quad \text{\purple{(Stars and Bars)}}
+  \] 
+
+  \pause
+  \begin{center}
+    \blue{\boxed{\text{Placing $m-1$ bars into $n + (m-1)$ slots.}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+    \red{Composition of $n$ with $m$ terms}
+  \end{center}
+
+  \[
+    \red{\boxed{n = x_1 + x_2 + \ldots + x_m \quad (x_i \;\blue{>}\; 0)}}
+  \]
+
+  \pause
+  \vspace{0.50cm}
+  \fig{width = 0.35\textwidth}{figs/composition-n7-m3-stars-and-bars}
+  \[
+    7 = 4 + 1 + 2 \quad \text{\purple{(Stars and Bars)}}
+  \] 
+
+  \pause
+  \vspace{0.30cm}
+  \begin{center}
+    \blue{\boxed{\text{Placing $m-1$ bars into $n - 1$ slots.}}}
+  \end{center}
 
   \pause
   \[
-    x_i: \text{the \# of apples the $i$-th child gets}
-  \]
-  \[
-    x_1 + x_2 + \cdots + x_n = k, \quad x_i \ge 0
-  \]
-
-  \pause
-  \centerline{\red{\large Integer composition} \pause \quad \teal{\text{(The order matters!)}}}
-
-  \pause
-  \[
-    \red{y_i \triangleq x_i + 1}
-  \]
-  \pause
-  \[
-    y_1 + y_2 + \cdots + y_n = n + k, \qquad \red{y_i \ge 1}
-  \]
-  \pause 
-  \[
-    \binom{n+k-1}{n-1} = \binom{n+k-1}{k}
+    {n-1 \choose m-1}
   \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{Multisets ($\text{CS}: 1.5-4$)}
-    Use \red{\bf multisets} to determine the number of ways to pass out $k$ \purple{identical} apples to $n$ children. 
-    Assume that a child may get more than one apple.
-  \end{exampleblock}
+% \begin{frame}
+%   \[
+%     \red{y_i \triangleq x_i + 1}
+%   \]
+%   \pause
+%   \[
+%     y_1 + y_2 + \cdots + y_n = n + k, \qquad \red{y_i \ge 1}
+%   \]
+%   \pause 
+%   \[
+%     \binom{n+k-1}{n-1} = \binom{n+k-1}{k}
+%   \]
+% \end{frame}
+%%%%%%%%%%%%%%%
 
-  \pause
-  \vspace{0.30cm}
-  \centerline{\red{$Q:$} \textcolor<6->{blue}{$k$-multiset of $[1 \cdots n]$} \emph{\blue{vs.}} \textcolor<6->{lightgray}{$n$-multiset of $[1 \cdots k]$}}
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{columns}
+    \column{0.50\textwidth}
+      \begin{theorem}
+        The \# of \red{weak composition} of $n$ with $m$ terms is
+        \[
+          {n+m-1 \choose m-1} = {n+m-1 \choose n}
+        \]
+      \end{theorem}
+    \column{0.50\textwidth}
+      \pause
+      \begin{theorem}[CS Theorem 1.8]
+        The \# of $n$-element \red{multisets} chosen from an $m$-element set is
+        \[
+          {n+m-1 \choose m-1} = {n+m-1 \choose n}
+        \]
+      \end{theorem}
+  \end{columns}
+
+  % \[
+  %   \red{\boxed{n = x_1 + x_2 + \ldots + x_m \quad (x_i \ge 0)}}
+  % \]
+
+  % \pause
+  % \begin{center}
+  %   {\red{$Q:$} \textcolor<6->{blue}{$n$-multiset of $M \triangleq [1 \cdots m]$} 
+  %   \emph{\blue{vs.}} \textcolor<6->{lightgray}{$m$-multiset of $N \triangleq [1 \cdots n]$}}
+  % \end{center}
 
   \pause
   \[
-    k = 7 \qquad n = 5
+    n = 7 \quad m = 5 \qquad \text{\purple{(Apples and Children)}}
   \]
 
+  \vspace{-0.30cm}
+  \uncover<5->{
+    \[
+      \set{1,\quad 1,\quad 3,\quad 1,\quad 4,\quad 3,\quad 5}
+    \]}
+
   \pause
+  \vspace{-0.60cm}
   \fig{width = 0.50\textwidth}{figs/apple-to-children-multiset}
 
   \pause
-  \vspace{-0.80cm}
+  \vspace{-0.60cm}
   \[
-    \set{1,1,1,3,3,4,5}
+    7 = 3 + 0 + 2 + 1 + 1
   \]
 \end{frame}
 %%%%%%%%%%%%%%%

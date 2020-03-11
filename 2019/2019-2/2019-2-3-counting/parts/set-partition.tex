@@ -2,24 +2,21 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{Set Partition ($\text{CS}: 1.5-4$ Extended)}
-    What is the number of ways to pass out $k$ \red{distinct} apples to \red{$n$-胞胎}. 
-    Assume that a child may get more than one apple.
-  \end{exampleblock}
+  \begin{align*}
+    \set{1, 2, 3} &= \set{1, 2, 3} \\[5pt] \pause
+                  &= \set{1} \cup \set{2, 3}  \\[5pt] \pause
+                  &= \set{2} \cup \set{1, 3}  \\[5pt] \pause
+                  &= \set{3} \cup \set{1, 2}  \\[5pt] \pause
+                  &= \set{1} \cup \set{2} \cup \set{3}
+  \end{align*}
 
-  \pause
-  \fig{width = 0.40\textwidth}{figs/apple-to-children-set-partition}
+  \[
+    \left\{ n \atop \red{k} \right\}: \text{ \# of partitions of $N$ into \red{$k$} parts}
+  \]
 
-  \begin{columns}
-    \column{0.50\textwidth}
-      \fig{width = 0.85\textwidth}{figs/apple-to-children-set-partition-equiv}
-    \column{0.50\textwidth}
-      \fig{width = 0.85\textwidth}{figs/apple-to-children-set-partition-nonequiv}
-  \end{columns}
-
-  \pause
-  \vspace{0.50cm}
-  \centerline{\red{\large Set partition of $[1 \cdots k]$ into $\le n$ parts}}
+  \begin{center}
+    \red{Stirling number of the second kind}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -30,10 +27,6 @@
       S(n,k) \;\teal{(\stirling{n}{k})}: \#\; \text{of set partitions of $[1 \cdots n]$ into $k$ classes}
     \]
   \end{exampleblock}
-
-  \pause
-  \vspace{0.30cm}
-  \centerline{\red{Stirling number of the second kind}}
 
   \pause
   \vspace{0.30cm}
@@ -58,7 +51,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    \text{Bell number: } B_n = \sum_{k=0}^{k=n} \stirling{n}{k}
+    \text{Bell number: } B_n = \sum_{k=1}^{k=n} \stirling{n}{k}
   \]
 
   \pause
@@ -77,11 +70,5 @@
       + \frac{1}{2}\left(\frac{\ln \ln n}{\ln n}\right)^2 + O\left(\frac{\ln \ln n}{(\ln n)^2} \right)
     \]
   \end{theorem}
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.85\textwidth}{figs/12-way}
 \end{frame}
 %%%%%%%%%%%%%%%
