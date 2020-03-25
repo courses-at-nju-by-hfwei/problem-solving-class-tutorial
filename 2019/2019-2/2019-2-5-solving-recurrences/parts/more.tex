@@ -1,0 +1,71 @@
+% more.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    {\teal{\Large More Issues about Linear Recurrences}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} + \red{g(n)} \quad \text{for } n \ge t
+  \]
+
+  \vspace{0.50cm}
+  \[
+    a_n = a_n^{h} + \purple{a_n^{p}}
+  \]
+
+  \begin{center}
+    {\href{http://mysite.science.uottawa.ca/msajna/MAT2348/non-hom-RR.pdf}
+  {\teal{\small {\it How to Find a \purple{Particular Solution} for a Non-homogeneous Recurrence?}}}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = r_1 a_{n-1} + r_2 a_{n-2} + \cdots + r_t a_{n-t} \quad \text{for } n \ge t
+  \]
+  \[
+    \teal{\boxed{q(x) \;\red{\equiv}\; x^t - r_1 x^{t-1} - r_2 x^{t-2} - \cdots - r_t}}
+  \]
+  \[
+    \red{\boxed{a_n = \sum_{0 \le j < m_1} c_{1j} n^j \beta_{1}^{n} 
+      + \sum_{0 \le j < m_2} c_{2j} n^j \beta_{2}^{n} + \cdots 
+      + \sum_{0 \le j < m_k} c_{kj} n^j \beta_{k}^{n}}}
+  \]
+
+  \[
+    t \ge 5
+  \]
+
+  \vspace{0.30cm}
+  \begin{center}
+    {\teal{Generating Functions and Asymptotic Analysis}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \[
+    a_n = f_1(n) a_{n-1} + f_2(n) a_{n-2} + \cdots + f_t(n) a_{n-t} \quad \text{for } n \ge t
+  \]
+
+  \vspace{0.60cm}
+  \begin{center}
+    {\teal{Generating Functions}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.40\textwidth}{figs/AoA}
+\end{frame}
+%%%%%%%%%%%%%%%
